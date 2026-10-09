@@ -1,0 +1,17 @@
+{
+  "name": "forum-intelligence-for-bbpress",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "lint": "eslint assets/src tools/*.mjs tests/E2E/*.mjs tests/Support/*.mjs",
+    "test": "node --test tests/Frontend/*.test.mjs",
+    "e2e": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "^1.55.0",
+    "eslint": "^10.12.0"
+  }
+}

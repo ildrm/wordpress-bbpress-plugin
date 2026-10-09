@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php" colors="true" cacheDirectory=".phpunit.cache" failOnWarning="true">
+  <testsuites><testsuite name="Forum Intelligence"><directory suffix="Test.php">tests/Unit</directory><directory suffix="Test.php">tests/Integration</directory></testsuite></testsuites>
+</phpunit>

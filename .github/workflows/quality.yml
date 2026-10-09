@@ -1,0 +1,108 @@
+name: Quality
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php: '8.2'
+            wordpress: '6.6'
+          - php: '8.4'
+            wordpress: '7.1'
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: isolated-test-only
+          MARIADB_DATABASE: fi_test
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=10s --health-timeout=5s --health-retries=10
+    env:
+      FI_TEST_DB_PASSWORD: isolated-test-only
+      FI_WP_VERSION: ${{ matrix.wordpress }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mysqli, mbstring, sodium, openssl, curl, fileinfo, dom, xml, zip
+          tools: composer:v2
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: composer validate --strict --no-check-publish
+      - run: composer install --no-interaction --prefer-dist
+      - run: composer audit --locked
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - name: Provision disposable WordPress
+        run: |
+          mkdir -p .runtime
+          curl --fail --location --proto '=https' --tlsv1.2 https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar --output .runtime/wp-cli.phar
+          php tools/setup-tests.php
+          php tools/verify-cli.php
+          php tools/verify-symbols.php
+      - run: php tools/lint.php
+      - run: vendor/bin/phpcs --standard=phpcs.xml.dist
+      - run: vendor/bin/phpstan analyse --memory-limit=2G --no-progress
+      - run: vendor/bin/phpunit
+      - run: php tools/integration.php
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+      - name: Build isolated production dependencies
+        run: |
+          node tools/fetch-scoper.mjs
+          FI_COMPOSER_PHAR="$(which composer)" php tools/package.php
+      - name: Browser and accessibility
+        if: matrix.wordpress == '7.1'
+        run: |
+          npx playwright install --with-deps chromium
+          php tools/seed-e2e.php
+          php -S 127.0.0.1:8898 -t .runtime/wordpress tools/serve-router.php > .runtime/server.log 2>&1 &
+          npm run e2e
+          php .runtime/wp-cli.phar --path=.runtime/wordpress theme install twentytwentyone --activate
+          php tools/seed-e2e.php
+          npm run e2e
+          FI_PWA_E2E=1 FI_PHP=php npx playwright test tests/E2E/pwa.mjs
+          php tools/template-fixture.php enable
+          trap 'php tools/template-fixture.php restore' EXIT
+          FI_TEMPLATE_E2E=1 npx playwright test tests/E2E/templates.mjs --grep-invert 'native visual and text'
+          php tools/template-fixture.php restore
+          trap - EXIT
+          php tools/mention-editor-fixture.php enable
+          trap 'php .runtime/wp-cli.phar --path=.runtime/wordpress plugin activate buddypress; php tools/mention-editor-fixture.php restore' EXIT
+          FI_RICH_MENTION_E2E=1 npx playwright test tests/E2E/mentions-rich.mjs
+          FI_RICH_DRAFT_E2E=1 npx playwright test tests/E2E/offline-drafts.mjs --grep 'rich editor'
+          FI_RICH_COMPOSER_E2E=1 npx playwright test tests/E2E/composer-tools.mjs --grep 'native rich selection'
+          php tools/template-fixture.php enable
+          trap 'php tools/template-fixture.php restore; php .runtime/wp-cli.phar --path=.runtime/wordpress plugin activate buddypress; php tools/mention-editor-fixture.php restore' EXIT
+          FI_TEMPLATE_E2E=1 FI_RICH_TEMPLATE_E2E=1 npx playwright test tests/E2E/templates.mjs --grep 'native visual and text'
+          php tools/template-fixture.php restore
+          trap 'php .runtime/wp-cli.phar --path=.runtime/wordpress plugin activate buddypress; php tools/mention-editor-fixture.php restore' EXIT
+          php .runtime/wp-cli.phar --path=.runtime/wordpress plugin deactivate buddypress
+          FI_RICH_MENTION_E2E=1 npx playwright test tests/E2E/mentions-rich.mjs
+          php tools/mention-editor-fixture.php restore
+          trap 'php .runtime/wp-cli.phar --path=.runtime/wordpress plugin activate buddypress' EXIT
+          FI_FALLBACK_MENTION_E2E=1 FI_PHP=php npx playwright test tests/E2E/mentions-fallback.mjs
+          php .runtime/wp-cli.phar --path=.runtime/wordpress plugin activate buddypress
+          trap - EXIT
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: quality-${{ matrix.php }}-${{ matrix.wordpress }}
+          path: |
+            .runtime/playwright-report
+            .runtime/playwright-results
+            .runtime/server.log

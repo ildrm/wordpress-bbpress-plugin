@@ -1,0 +1,35 @@
+import { spawnSync } from 'node:child_process';
+import { nativeLogin } from '../Support/native-login.mjs';
+import { test, expect } from '@playwright/test';
+let fixture;
+const command = (action) => {
+  const result = spawnSync(process.env.FI_PHP || 'C:/xampp/php/php.exe', ['tools/answer-fixture.php', action], { encoding: 'utf8', windowsHide: true });
+  if (result.status !== 0) throw new Error('Owned answer fixture failed: ' + result.stderr + result.stdout);
+  return JSON.parse(result.stdout.slice(result.stdout.indexOf('{')).trim());
+};
+test.beforeAll(() => { fixture = command('seed'); });
+test.afterAll(() => { command('cleanup'); });
+test('saved generated answers disappear after acceptance withdrawal while native ask remains usable', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await nativeLogin(page, 'e2e_author');
+  await page.goto(fixture.url, { waitUntil: 'domcontentloaded' });
+  const panel = page.locator('.fi-panel');
+  await expect(panel.getByText('GENERATED_BROWSER_SUPPORT_CANARY', { exact: true })).toBeVisible();
+  await expect(panel.locator('a[href="' + fixture.topic_url + '"]')).toBeVisible();
+  await expect(panel.locator('input[name*="grounding"]')).toHaveCount(0);
+  const other = await browser.newContext({ javaScriptEnabled: false });
+  const otherPage = await other.newPage();
+  await nativeLogin(otherPage, 'e2e_member');
+  await otherPage.goto(fixture.url, { waitUntil: 'domcontentloaded' });
+  await expect(otherPage.getByText('GENERATED_BROWSER_SUPPORT_CANARY', { exact: true })).toHaveCount(0);
+  await other.close();
+  command('withdraw');
+  await page.reload({ waitUntil: 'domcontentloaded' });
+  await expect(panel.getByText('GENERATED_BROWSER_SUPPORT_CANARY', { exact: true })).toHaveCount(0);
+  await expect(panel.locator('a[href="' + fixture.topic_url + '"]')).toHaveCount(0);
+  await expect(panel.getByRole('status')).toHaveText('This saved answer is no longer supported by current community evidence. Ask again for an updated result.');
+  await expect(panel.getByRole('textbox', { name: 'Your question' })).toBeVisible();
+  await expect(panel.getByRole('button', { name: 'Ask', exact: true })).toBeVisible();
+  await context.close();
+});

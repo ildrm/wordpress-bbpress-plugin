@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="Forum Intelligence">
+  <description>WordPress formatting and security checks for a namespaced PSR-4 plugin.</description>
+  <file>src</file>
+  <file>forum-intelligence-for-bbpress.php</file>
+  <file>autoload.php</file>
+  <file>uninstall.php</file>
+  <arg name="extensions" value="php"/>
+  <arg name="parallel" value="4"/>
+  <rule ref="WordPress-Core">
+    <!-- PSR-4 contracts and namespaced PHP use camelCase; global WordPress API names remain native. -->
+    <exclude name="WordPress.NamingConventions.ValidFunctionName"/>
+    <exclude name="WordPress.NamingConventions.ValidVariableName"/>
+    <exclude name="WordPress.Files.FileName"/>
+    <!-- Ordinary comparisons and explicit PHP truthy fallbacks are intentional in strict typed code. -->
+    <exclude name="WordPress.PHP.YodaConditions"/>
+    <exclude name="Universal.Operators.DisallowShortTernary"/>
+  </rule>
+  <rule ref="WordPress.Security.EscapeOutput">
+    <!-- Domain failures are escaped at HTML presentation or encoded by WordPress REST. -->
+    <exclude name="WordPress.Security.EscapeOutput.ExceptionNotEscaped"/>
+  </rule>
+  <rule ref="WordPress.Security.NonceVerification"/>
+  <rule ref="WordPress.DB.DirectDatabaseQuery"/>
+</ruleset>

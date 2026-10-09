@@ -1,0 +1,54 @@
+import { URL } from 'node:url';
+import { nativeLogin } from '../Support/native-login.mjs';
+import { test, expect } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import { readFile } from 'node:fs/promises';
+const fixture = JSON.parse(await readFile('.runtime/e2e.json', 'utf8'));
+const panel = (page) => page.locator('.fi-panel').filter({ has: page.getByRole('heading', { name: 'Ask the Community', exact: true }) });
+
+test('native ask abstention preserves authorized sources and scopes the saved result to its reader', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto(fixture.search_url, { waitUntil: 'domcontentloaded' });
+  await expect(panel(page).getByRole('link', { name: 'Sign in to ask' })).toBeVisible();
+  await expect(panel(page).getByRole('textbox', { name: 'Your question' })).toHaveCount(0);
+  await nativeLogin(page, 'e2e_member');
+  await page.goto(fixture.search_url, { waitUntil: 'domcontentloaded' });
+  await panel(page).getByRole('textbox', { name: 'Your question' }).fill('browser cache invalidation');
+  await panel(page).getByRole('button', { name: 'Ask', exact: true }).click();
+  await expect(page).toHaveURL(/fi_result=/);
+  const savedUrl = page.url();
+  await expect(panel(page).getByRole('status').filter({ hasText: 'We could not find a sufficiently supported answer' })).toBeVisible();
+  await expect(panel(page).getByRole('link', { name: 'Browser cache invalidation question', exact: true }).and(page.locator('a[href="' + fixture.topic_url + '"]'))).toBeVisible();
+  const composer = panel(page).getByRole('link', { name: 'Create a new topic', exact: true });
+  await expect(composer).toBeVisible();
+  expect(new URL(await composer.getAttribute('href')).searchParams.get('fi_question')).toBe('browser cache invalidation');
+  await expect(page.getByText('CANARY_HIDDEN', { exact: false })).toHaveCount(0);
+  const other = await browser.newContext({ javaScriptEnabled: false });
+  const otherPage = await other.newPage();
+  await nativeLogin(otherPage, 'e2e_author');
+  await otherPage.goto(savedUrl, { waitUntil: 'domcontentloaded' });
+  await expect(panel(otherPage).getByText('We could not find a sufficiently supported answer', { exact: false })).toHaveCount(0);
+  await expect(panel(otherPage).getByRole('link', { name: 'Create a new topic', exact: true })).toHaveCount(0);
+  await other.close();
+  await context.close();
+});
+
+test('ask controls expose native bounds, keyboard focus and mobile RTL labels', async ({ page }) => {
+  await nativeLogin(page, 'e2e_member');
+  await page.goto(fixture.search_url, { waitUntil: 'domcontentloaded' });
+  const question = panel(page).getByRole('textbox', { name: 'Your question' });
+  await expect(question).toHaveAttribute('maxlength', '500');
+  await expect(question).toHaveAttribute('minlength', '12');
+  await expect(question).toHaveAttribute('required', '');
+  await question.focus();
+  await page.keyboard.press('Tab');
+  await expect(panel(page).getByRole('button', { name: 'Ask', exact: true })).toBeFocused();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.evaluate(() => { document.documentElement.dir = 'rtl'; });
+  await expect(question).toBeVisible();
+  const overflow = await panel(page).evaluate((element) => element.getBoundingClientRect().left < -1 || element.getBoundingClientRect().right > window.innerWidth + 1);
+  expect(overflow).toBe(false);
+  const result = await new AxeBuilder({ page }).include('.fi-panel').withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
+  expect(result.violations).toEqual([]);
+});

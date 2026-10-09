@@ -1,0 +1,3365 @@
+# Copyright (C) 2026 Shahin Ilderemi
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Forum Intelligence for bbPress 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-bbpress-plugin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-10-09T12:10:05+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: forum-intelligence-for-bbpress\n"
+
+#. Plugin Name of the plugin
+#: forum-intelligence-for-bbpress.php
+msgid "Forum Intelligence for bbPress"
+msgstr ""
+
+#. Description of the plugin
+#: forum-intelligence-for-bbpress.php
+msgid "Permission-aware solutions, search, knowledge and moderation."
+msgstr ""
+
+#. Author of the plugin
+#: forum-intelligence-for-bbpress.php
+msgid "Shahin Ilderemi"
+msgstr ""
+
+#. Author URI of the plugin
+#: forum-intelligence-for-bbpress.php
+msgid "https://ildrm.com"
+msgstr ""
+
+#: src/Admin/Admin.php:15
+#: src/Admin/Admin.php:25
+#: src/Admin/Admin.php:161
+#: src/Admin/Onboarding.php:18
+#: src/Bootstrap/Services.php:361
+#: src/Domain/Composer/Drafts.php:137
+#: src/Domain/Composer/Templates.php:12
+#: src/Domain/Composer/TopicFields.php:12
+#: src/Domain/Reputation/Reputation.php:101
+#: src/Infrastructure/Queue/Queue.php:60
+msgid "Settings permission is required."
+msgstr ""
+
+#: src/Admin/Admin.php:27
+#: src/Domain/Composer/Templates.php:14
+msgid "The configuration is too large."
+msgstr ""
+
+#: src/Admin/Admin.php:30
+msgid "Review a valid version 1 configuration."
+msgstr ""
+
+#: src/Admin/Admin.php:37
+msgid "Select an available compatible editorial target before importing configuration."
+msgstr ""
+
+#: src/Admin/Admin.php:44
+msgid "Enable composer before importing fields."
+msgstr ""
+
+#: src/Admin/Admin.php:48
+#: src/Admin/Admin.php:53
+msgid "Enable composer before importing templates."
+msgstr ""
+
+#: src/Admin/Admin.php:76
+msgid "Report unavailable."
+msgstr ""
+
+#: src/Admin/Admin.php:87
+#: src/Admin/Admin.php:259
+#: src/Health/Health.php:53
+#: src/Privacy/Privacy.php:12
+#: src/Privacy/Privacy.php:22
+msgid "Forum Intelligence"
+msgstr ""
+
+#: src/Admin/Admin.php:211
+msgid "The selected editorial target is unavailable. Select a compatible target before conversion."
+msgstr ""
+
+#: src/Admin/Admin.php:247
+msgid "Dashboard"
+msgstr ""
+
+#: src/Admin/Admin.php:248
+#: src/Domain/Notifications/Notifications.php:214
+msgid "Moderation"
+msgstr ""
+
+#: src/Admin/Admin.php:249
+msgid "Knowledge"
+msgstr ""
+
+#: src/Admin/Admin.php:250
+msgid "AI answer feedback"
+msgstr ""
+
+#: src/Admin/Admin.php:251
+msgid "Jobs and indexing"
+msgstr ""
+
+#: src/Admin/Admin.php:252
+msgid "Settings and modules"
+msgstr ""
+
+#: src/Admin/Admin.php:253
+msgid "Audit"
+msgstr ""
+
+#: src/Admin/Admin.php:254
+msgid "Setup and tools"
+msgstr ""
+
+#: src/Admin/Admin.php:255
+msgid "Analytics"
+msgstr ""
+
+#: src/Admin/Admin.php:256
+msgid "Reputation"
+msgstr ""
+
+#: src/Admin/Admin.php:257
+msgid "Message reports"
+msgstr ""
+
+#: src/Admin/Admin.php:259
+msgid "Administration sections"
+msgstr ""
+
+#: src/Admin/Admin.php:290
+msgid "Review answer feedback"
+msgstr ""
+
+#: src/Admin/Admin.php:290
+msgid "Review the current source discussions to identify missing documentation, inaccurate advice and outdated solutions. Resolving a report records your review; it does not change a discussion, regenerate an answer or train an external model."
+msgstr ""
+
+#: src/Admin/Admin.php:292
+msgid "No accessible answer feedback on this page."
+msgstr ""
+
+#: src/Admin/Admin.php:297
+msgid "Updated (UTC):"
+msgstr ""
+
+#: src/Admin/Admin.php:299
+msgid "The supporting evidence has changed since this answer. Review the current discussion."
+msgstr ""
+
+#: src/Admin/Admin.php:301
+msgid "Review status"
+msgstr ""
+
+#: src/Admin/Admin.php:312
+msgid "Save feedback review"
+msgstr ""
+
+#: src/Admin/Admin.php:329
+msgid "Older feedback"
+msgstr ""
+
+#: src/Admin/Admin.php:335
+msgid "Use Moderation to review reports and Knowledge to review summaries."
+msgstr ""
+
+#: src/Admin/Admin.php:345
+msgid "Get started with guided setup"
+msgstr ""
+
+#: src/Admin/Admin.php:347
+msgid "Last 30 days"
+msgstr ""
+
+#: src/Admin/Admin.php:347
+msgid "No raw search questions are stored. AI is optional; configure it only after reviewing the site privacy policy."
+msgstr ""
+
+#: src/Admin/Admin.php:360
+msgid "Case status"
+msgstr ""
+
+#: src/Admin/Admin.php:363
+msgid "Filter cases"
+msgstr ""
+
+#: src/Admin/Admin.php:373
+msgid "Request AI advisory review"
+msgstr ""
+
+#: src/Admin/Admin.php:380
+msgid "AI advisory: human review required"
+msgstr ""
+
+#: src/Admin/Admin.php:382
+msgid "Possible spam"
+msgstr ""
+
+#: src/Admin/Admin.php:383
+msgid "Possible toxicity"
+msgstr ""
+
+#: src/Admin/Admin.php:384
+msgid "Possible dangerous advice"
+msgstr ""
+
+#: src/Admin/Admin.php:385
+msgid "Possible personal information"
+msgstr ""
+
+#: src/Admin/Admin.php:386
+msgid "Provider confidence"
+msgstr ""
+
+#: src/Admin/Admin.php:390
+msgid "Source changed; regenerate before using this advisory."
+msgstr ""
+
+#: src/Admin/Admin.php:390
+msgid "No moderation action was taken by AI."
+msgstr ""
+
+#: src/Admin/Admin.php:393
+#: src/Admin/Admin.php:473
+#: src/Admin/Tools.php:75
+msgid "Action"
+msgstr ""
+
+#: src/Admin/Admin.php:396
+msgid "Moderator notes"
+msgstr ""
+
+#: src/Admin/Admin.php:396
+msgid "Assign moderator user ID"
+msgstr ""
+
+#: src/Admin/Admin.php:398
+msgid "Apply reviewed action"
+msgstr ""
+
+#: src/Admin/Admin.php:401
+msgid "No cases in this view."
+msgstr ""
+
+#: src/Admin/Admin.php:402
+msgid "Older cases"
+msgstr ""
+
+#: src/Admin/Admin.php:407
+#: src/Domain/Knowledge/Knowledge.php:693
+msgid "Community knowledge is disabled."
+msgstr ""
+
+#: src/Admin/Admin.php:412
+msgid "Moderator recommendations"
+msgstr ""
+
+#: src/Admin/Admin.php:412
+msgid "Review recommended solved discussions, prepare a current summary, then create an editorial draft."
+msgstr ""
+
+#: src/Admin/Admin.php:420
+msgid "The recommendation queue is unavailable. Check your current access and reopen this page."
+msgstr ""
+
+#: src/Admin/Admin.php:423
+msgid "No readable recommendations in this page."
+msgstr ""
+
+#. translators: %d: Native source topic ID.
+#: src/Admin/Admin.php:433
+#, php-format
+msgid "Topic #%d"
+msgstr ""
+
+#: src/Admin/Admin.php:434
+msgid "The source changed after this recommendation. Review the current discussion."
+msgstr ""
+
+#: src/Admin/Admin.php:434
+msgid "Ready for human review."
+msgstr ""
+
+#: src/Admin/Admin.php:443
+#: src/Admin/Admin.php:480
+msgid "Create editorial draft"
+msgstr ""
+
+#: src/Admin/Admin.php:455
+#: src/Admin/Admin.php:482
+msgid "Withdraw recommendation"
+msgstr ""
+
+#: src/Admin/Admin.php:470
+msgid "Older recommendations"
+msgstr ""
+
+#: src/Admin/Admin.php:473
+msgid "Topic ID"
+msgstr ""
+
+#: src/Admin/Admin.php:475
+msgid "Generate a summary"
+msgstr ""
+
+#: src/Admin/Admin.php:476
+msgid "Save reviewed summary"
+msgstr ""
+
+#: src/Admin/Admin.php:477
+msgid "Unlock summary"
+msgstr ""
+
+#: src/Admin/Admin.php:478
+msgid "Disable summary"
+msgstr ""
+
+#: src/Admin/Admin.php:479
+msgid "Flag inaccurate summary"
+msgstr ""
+
+#: src/Admin/Admin.php:481
+msgid "Recommend solved discussion"
+msgstr ""
+
+#: src/Admin/Admin.php:485
+msgid "Reviewed summary text or recommendation note"
+msgstr ""
+
+#: src/Admin/Admin.php:487
+msgid "Review community knowledge"
+msgstr ""
+
+#: src/Admin/Admin.php:487
+msgid "Manual edits lock summaries. AI regeneration is queued. Articles are always created as editorial drafts."
+msgstr ""
+
+#: src/Admin/Admin.php:487
+msgid "Apply"
+msgstr ""
+
+#: src/Admin/Admin.php:489
+msgid "Source topic ID"
+msgstr ""
+
+#: src/Admin/Admin.php:489
+msgid "Target topic ID"
+msgstr ""
+
+#: src/Admin/Admin.php:489
+msgid "Relationship"
+msgstr ""
+
+#: src/Admin/Admin.php:493
+msgid "Approve relationship"
+msgstr ""
+
+#: src/Admin/Admin.php:502
+msgid "Core behavior"
+msgstr ""
+
+#: src/Admin/Admin.php:504
+msgid "Topic authors can accept solutions"
+msgstr ""
+
+#: src/Admin/Admin.php:505
+msgid "Allow multiple accepted answers"
+msgstr ""
+
+#: src/Admin/Admin.php:506
+msgid "Enable downvotes"
+msgstr ""
+
+#: src/Admin/Admin.php:507
+msgid "Allow self-votes"
+msgstr ""
+
+#: src/Admin/Admin.php:508
+msgid "Notify responsible article editors when sources change"
+msgstr ""
+
+#: src/Admin/Admin.php:511
+msgid "Enabled reactions"
+msgstr ""
+
+#: src/Admin/Admin.php:511
+msgid "Reactions express appreciation and do not award reputation points. Helpful votes remain separate. Disabled reactions are retained and members can remove their own previous reactions."
+msgstr ""
+
+#: src/Admin/Admin.php:517
+msgid "Optional modules"
+msgstr ""
+
+#: src/Admin/Admin.php:520
+msgid "Votes and reactions"
+msgstr ""
+
+#: src/Admin/Admin.php:521
+msgid "Reports and moderation"
+msgstr ""
+
+#: src/Admin/Admin.php:522
+#: src/Domain/Knowledge/Knowledge.php:509
+#: src/Domain/Knowledge/Knowledge.php:521
+msgid "Community knowledge"
+msgstr ""
+
+#: src/Admin/Admin.php:523
+msgid "Related discussions"
+msgstr ""
+
+#: src/Admin/Admin.php:524
+msgid "Notifications and follows"
+msgstr ""
+
+#: src/Admin/Admin.php:525
+msgid "Reputation and expertise"
+msgstr ""
+
+#: src/Admin/Admin.php:526
+msgid "Achievements and reviewed badges"
+msgstr ""
+
+#: src/Admin/Admin.php:527
+msgid "Topic polls"
+msgstr ""
+
+#: src/Admin/Admin.php:528
+msgid "Composer fields and drafts"
+msgstr ""
+
+#: src/Admin/Admin.php:529
+#: src/Frontend/Extras.php:87
+msgid "Attachments"
+msgstr ""
+
+#: src/Admin/Admin.php:530
+msgid "Private messaging"
+msgstr ""
+
+#: src/Admin/Admin.php:531
+msgid "Installable community app"
+msgstr ""
+
+#: src/Admin/Admin.php:532
+msgid "Browser push notifications"
+msgstr ""
+
+#: src/Admin/Admin.php:535
+msgid "AI and privacy"
+msgstr ""
+
+#: src/Admin/Admin.php:535
+msgid "Enabling AI permits public discussion excerpts and redacted questions to leave this site. Restricted content is excluded. Set FI_AI_API_KEY in server configuration; it is never stored or displayed here. Review provider terms and update your privacy policy before enabling."
+msgstr ""
+
+#: src/Admin/Admin.php:536
+msgid "Enable external AI processing of public content"
+msgstr ""
+
+#: src/Admin/Admin.php:537
+msgid "Allow generated Ask the Community answers when AI is enabled"
+msgstr ""
+
+#: src/Admin/Admin.php:538
+msgid "Allow human-requested moderation advice when AI is enabled"
+msgstr ""
+
+#: src/Admin/Admin.php:539
+msgid "Enable optional AI reranking of public search results"
+msgstr ""
+
+#: src/Admin/Admin.php:540
+msgid "Reranking sends at most twelve public excerpts and the redacted search query. It is off by default. Separate feature models may be left blank to use the text model. Provider failure keeps community search available."
+msgstr ""
+
+#: src/Admin/Admin.php:541
+msgid "Prepare pending content in the local index; retrieval waits for publication"
+msgstr ""
+
+#: src/Admin/Admin.php:542
+msgid "Enable semantic search"
+msgstr ""
+
+#: src/Admin/Admin.php:543
+msgid "Automatic long-discussion summaries"
+msgstr ""
+
+#: src/Admin/Admin.php:543
+msgid "Automatic summaries require external AI opt-in and a current moderator. Work waits for a quiet discussion and respects the minimum interval. Human locks, disabled summaries and restricted sources are preserved. Articles are never automatically published."
+msgstr ""
+
+#: src/Admin/Admin.php:544
+msgid "Enable automatic long-discussion summaries"
+msgstr ""
+
+#: src/Admin/Admin.php:546
+msgid "Responsible moderator user ID"
+msgstr ""
+
+#: src/Admin/Admin.php:547
+msgid "Minimum published replies for automatic summaries"
+msgstr ""
+
+#: src/Admin/Admin.php:548
+msgid "Wait after discussion changes, in seconds"
+msgstr ""
+
+#: src/Admin/Admin.php:549
+msgid "Minimum seconds between generated summaries"
+msgstr ""
+
+#: src/Admin/Admin.php:554
+msgid "Knowledge article target"
+msgstr ""
+
+#: src/Admin/Admin.php:554
+msgid "Choose the registered editorial integration for new drafts. Existing human articles retain their sources and review controls. Unavailable integrations stop conversion."
+msgstr ""
+
+#: src/Admin/Admin.php:554
+msgid "Editorial target"
+msgstr ""
+
+#: src/Admin/Admin.php:558
+msgid "Unavailable editorial target"
+msgstr ""
+
+#: src/Admin/Admin.php:564
+msgid "Automatic knowledge drafts"
+msgstr ""
+
+#: src/Admin/Admin.php:564
+msgid "Create a draft from a current summary of a public solved discussion that meets the configured criteria. Existing articles, including trashed articles, are preserved. A current moderator with article editing rights owns the draft. This local conversion does not generate content; AI summaries require current AI consent. Human publication is required."
+msgstr ""
+
+#: src/Admin/Admin.php:565
+msgid "Enable automatic knowledge article drafts"
+msgstr ""
+
+#: src/Admin/Admin.php:567
+msgid "Responsible article moderator user ID"
+msgstr ""
+
+#: src/Admin/Admin.php:568
+msgid "Minimum published replies for article drafts"
+msgstr ""
+
+#: src/Admin/Admin.php:569
+msgid "Minimum accepted-answer confirmations for article drafts"
+msgstr ""
+
+#: src/Admin/Admin.php:570
+msgid "Wait before article conversion, in seconds"
+msgstr ""
+
+#: src/Admin/Admin.php:594
+msgid "Text generation model"
+msgstr ""
+
+#: src/Admin/Admin.php:595
+msgid "Summary model (blank uses text model)"
+msgstr ""
+
+#: src/Admin/Admin.php:596
+msgid "Moderation model (blank uses text model)"
+msgstr ""
+
+#: src/Admin/Admin.php:597
+msgid "Reranking model (blank uses text model)"
+msgstr ""
+
+#: src/Admin/Admin.php:598
+msgid "AI request timeout, 1–30 seconds"
+msgstr ""
+
+#: src/Admin/Admin.php:599
+msgid "Maximum generated tokens, 128–4096"
+msgstr ""
+
+#: src/Admin/Admin.php:600
+msgid "Retry pause after provider failure, 10–3600 seconds"
+msgstr ""
+
+#: src/Admin/Admin.php:601
+msgid "Embedding model"
+msgstr ""
+
+#: src/Admin/Admin.php:602
+msgid "Maximum daily AI requests"
+msgstr ""
+
+#: src/Admin/Admin.php:603
+msgid "Minimum evidence coverage, 0.5–1"
+msgstr ""
+
+#: src/Admin/Admin.php:604
+msgid "Retention in days"
+msgstr ""
+
+#: src/Admin/Admin.php:605
+msgid "Upvote reputation points"
+msgstr ""
+
+#: src/Admin/Admin.php:606
+msgid "Downvote reputation deduction"
+msgstr ""
+
+#: src/Admin/Admin.php:607
+msgid "Solution confirmation points"
+msgstr ""
+
+#: src/Admin/Admin.php:608
+msgid "Accepted solution points"
+msgstr ""
+
+#: src/Admin/Admin.php:609
+msgid "Maximum daily reputation gain"
+msgstr ""
+
+#: src/Admin/Admin.php:610
+msgid "Minimum duplicate relevance, 0.1–1"
+msgstr ""
+
+#: src/Admin/Admin.php:613
+msgid "AI logging"
+msgstr ""
+
+#: src/Admin/Admin.php:615
+#: src/Frontend/Hub.php:234
+msgid "Off"
+msgstr ""
+
+#: src/Admin/Admin.php:616
+msgid "Aggregate failures only"
+msgstr ""
+
+#: src/Admin/Admin.php:617
+msgid "Aggregate usage and failures"
+msgstr ""
+
+#: src/Admin/Admin.php:621
+msgid "No logging mode stores questions, evidence, generated text or secrets. Request limits and security audits remain active."
+msgstr ""
+
+#: src/Admin/Admin.php:622
+msgid "Excluded forum IDs, separated by commas"
+msgstr ""
+
+#: src/Admin/Admin.php:622
+msgid "Data retention"
+msgstr ""
+
+#: src/Admin/Admin.php:623
+msgid "Delete plugin data on uninstall; forum posts remain"
+msgstr ""
+
+#: src/Admin/Admin.php:633
+msgid "Background processing"
+msgstr ""
+
+#: src/Admin/Admin.php:637
+msgid "Queue index rebuild"
+msgstr ""
+
+#: src/Admin/Admin.php:641
+msgid "Retry job"
+msgstr ""
+
+#: src/Admin/Admin.php:647
+msgid "Settings changed"
+msgstr ""
+
+#: src/Admin/Admin.php:648
+msgid "Configuration exported"
+msgstr ""
+
+#: src/Admin/Admin.php:649
+msgid "Reviewed configuration imported"
+msgstr ""
+
+#: src/Admin/Admin.php:650
+msgid "Topic templates changed"
+msgstr ""
+
+#: src/Admin/Admin.php:651
+msgid "Topic field definitions changed"
+msgstr ""
+
+#: src/Admin/Admin.php:654
+msgid "Audit events"
+msgstr ""
+
+#: src/Admin/Admin.php:657
+msgid "Older events"
+msgstr ""
+
+#: src/Admin/Onboarding.php:49
+msgid "Resolve the environment checks before continuing setup."
+msgstr ""
+
+#: src/Admin/Onboarding.php:59
+msgid "Review the indexing and AI privacy settings before building the index."
+msgstr ""
+
+#: src/Admin/Onboarding.php:85
+msgid "The defaults could not be saved. Please retry."
+msgstr ""
+
+#: src/Admin/Onboarding.php:105
+msgid "Getting started"
+msgstr ""
+
+#: src/Admin/Onboarding.php:105
+msgid "Follow these steps at your own pace. Accepted solutions and local search work without an AI account."
+msgstr ""
+
+#: src/Admin/Onboarding.php:105
+msgid "Check the environment"
+msgstr ""
+
+#: src/Admin/Onboarding.php:107
+msgid "PHP 8.2 or later"
+msgstr ""
+
+#: src/Admin/Onboarding.php:108
+msgid "WordPress 6.6 or later"
+msgstr ""
+
+#: src/Admin/Onboarding.php:109
+msgid "Required PHP extensions"
+msgstr ""
+
+#: src/Admin/Onboarding.php:110
+msgid "bbPress is active"
+msgstr ""
+
+#: src/Admin/Onboarding.php:111
+msgid "Database schema is current"
+msgstr ""
+
+#: src/Admin/Onboarding.php:114
+msgid "Passed"
+msgstr ""
+
+#: src/Admin/Onboarding.php:114
+#: src/Admin/Onboarding.php:140
+msgid "Needs attention"
+msgstr ""
+
+#: src/Admin/Onboarding.php:116
+msgid "Review community integrations"
+msgstr ""
+
+#: src/Admin/Onboarding.php:118
+msgid "BuddyPress activity and mentions"
+msgstr ""
+
+#: src/Admin/Onboarding.php:119
+msgid "BuddyPress group forums"
+msgstr ""
+
+#: src/Admin/Onboarding.php:120
+msgid "BuddyPress notifications"
+msgstr ""
+
+#: src/Admin/Onboarding.php:121
+msgid "BuddyPress messaging"
+msgstr ""
+
+#: src/Admin/Onboarding.php:124
+#: src/Frontend/Hub.php:289
+msgid "Active"
+msgstr ""
+
+#: src/Admin/Onboarding.php:124
+msgid "Not active"
+msgstr ""
+
+#: src/Admin/Onboarding.php:126
+msgid "Active community integrations retain their native ownership. Check their own delivery settings before sending member alerts."
+msgstr ""
+
+#: src/Admin/Onboarding.php:126
+msgid "Save essential defaults"
+msgstr ""
+
+#: src/Admin/Onboarding.php:126
+msgid "Fill missing settings with conservative defaults: author acceptance enabled, AI and semantic search disabled, and content retained on uninstall. Existing choices are preserved."
+msgstr ""
+
+#: src/Admin/Onboarding.php:129
+msgid "Save missing defaults"
+msgstr ""
+
+#: src/Admin/Onboarding.php:131
+msgid "Choose optional modules"
+msgstr ""
+
+#: src/Admin/Onboarding.php:131
+msgid "Engagement, moderation, knowledge, relationships, notifications, reputation, polls and the composer provide local features. Attachments, private messaging, achievements, push and the PWA are separate choices. Protected files need private storage; push needs browser consent and server keys."
+msgstr ""
+
+#: src/Admin/Onboarding.php:133
+msgid "Review settings and modules"
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "Review AI privacy and indexing"
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "Local indexing keeps search data on this site. Semantic indexing and AI answers can send permitted public content to your configured provider. Private, hidden, password-protected and group-forum content stays out of the bundled external adapter. Redaction is heuristic; review provider retention, region and contractual terms. Keep API keys in server configuration."
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "AI is currently enabled. Review its privacy settings before indexing."
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "AI is currently disabled. You can build the local index now."
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "Semantic indexing is currently enabled and may contact the configured provider."
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "Semantic indexing is currently disabled."
+msgstr ""
+
+#: src/Admin/Onboarding.php:134
+msgid "Indexing runs in bounded background batches. Configure a system cron for reliable processing, then monitor Jobs and indexing."
+msgstr ""
+
+#: src/Admin/Onboarding.php:136
+msgid "I reviewed the current indexing and AI privacy settings."
+msgstr ""
+
+#: src/Admin/Onboarding.php:138
+msgid "Queue initial index build"
+msgstr ""
+
+#: src/Admin/Onboarding.php:140
+msgid "Check background processing"
+msgstr ""
+
+#: src/Admin/Onboarding.php:140
+msgid "Recurring queue schedule"
+msgstr ""
+
+#: src/Admin/Onboarding.php:140
+msgid "Scheduled"
+msgstr ""
+
+#: src/Admin/Onboarding.php:140
+msgid "Last queue run"
+msgstr ""
+
+#: src/Admin/Onboarding.php:140
+msgid "Not recorded yet"
+msgstr ""
+
+#: src/Admin/Onboarding.php:143
+msgid "Some background jobs need attention. Review their status and retry eligible jobs."
+msgstr ""
+
+#: src/Admin/Onboarding.php:148
+msgid "Open jobs and indexing"
+msgstr ""
+
+#: src/Admin/Onboarding.php:148
+msgid "Run WordPress Site Health checks"
+msgstr ""
+
+#: src/Admin/Tools.php:15
+msgid "Structured topic fields"
+msgstr ""
+
+#: src/Admin/Tools.php:15
+msgid "Each field uses a stable key, label, type, visibility, required flag, forums and options. Public fields may separately opt into search and AI. Member and moderator fields stay out of both."
+msgstr ""
+
+#: src/Admin/Tools.php:17
+msgid "Save field definitions"
+msgstr ""
+
+#: src/Admin/Tools.php:17
+msgid "Field definitions, JSON"
+msgstr ""
+
+#: src/Admin/Tools.php:18
+msgid "Question templates"
+msgstr ""
+
+#: src/Admin/Tools.php:18
+msgid "Map forum IDs to plain-text templates. Existing discussions are unchanged."
+msgstr ""
+
+#: src/Admin/Tools.php:20
+msgid "Save templates"
+msgstr ""
+
+#: src/Admin/Tools.php:20
+msgid "Templates, JSON object"
+msgstr ""
+
+#: src/Admin/Tools.php:24
+msgid "Product support"
+msgstr ""
+
+#: src/Admin/Tools.php:26
+msgid "Support"
+msgstr ""
+
+#: src/Admin/Tools.php:27
+msgid "Example product"
+msgstr ""
+
+#: src/Admin/Tools.php:28
+msgid "Troubleshooting"
+msgstr ""
+
+#: src/Admin/Tools.php:32
+msgid "Contextual question templates"
+msgstr ""
+
+#: src/Admin/Tools.php:32
+msgid "Add up to 20 optional templates by question type, product and category. Each entry needs a unique id, label, integer forum and plain-text guidance. Forum 0 makes it available in every readable forum; a specific forum limits its audience. Criteria are optional and do not classify or change a topic."
+msgstr ""
+
+#: src/Admin/Tools.php:32
+msgid "Matching uses the most specified criteria, then a forum-specific rule, then the identifier in alphabetical order. Unmatched selections use the existing forum guidance. Labels allow 100 characters, each criterion 80, and guidance 5,000."
+msgstr ""
+
+#: src/Admin/Tools.php:32
+msgid "Configuration example"
+msgstr ""
+
+#: src/Admin/Tools.php:34
+msgid "Save contextual templates"
+msgstr ""
+
+#: src/Admin/Tools.php:34
+msgid "Contextual templates, JSON list"
+msgstr ""
+
+#: src/Admin/Tools.php:36
+msgid "Configuration transfer"
+msgstr ""
+
+#: src/Admin/Tools.php:36
+msgid "This export contains settings, field definitions and templates. API keys, browser subscriptions, messages, files and personal preferences are excluded."
+msgstr ""
+
+#: src/Admin/Tools.php:36
+msgid "Copy configuration JSON"
+msgstr ""
+
+#: src/Admin/Tools.php:43
+msgid "Import reviewed configuration"
+msgstr ""
+
+#: src/Admin/Tools.php:43
+msgid "Configuration JSON"
+msgstr ""
+
+#: src/Admin/Tools.php:43
+msgid "I reviewed the module and AI privacy settings in this configuration."
+msgstr ""
+
+#: src/Admin/Tools.php:45
+msgid "Retention"
+msgstr ""
+
+#: src/Admin/Tools.php:45
+msgid "Use WordPress Tools to export or erase a member’s personal data. Retention processes operational data in batches and preserves editorial content and reputation ledgers."
+msgstr ""
+
+#: src/Admin/Tools.php:45
+msgid "Run one retention batch"
+msgstr ""
+
+#: src/Admin/Tools.php:52
+msgid "Community outcomes, last 30 days"
+msgstr ""
+
+#: src/Admin/Tools.php:52
+msgid "Counts are aggregate. No raw search questions or member-level search histories are collected. API token totals are approximate provider-reported usage; they do not represent a billing invoice."
+msgstr ""
+
+#: src/Admin/Tools.php:56
+msgid "Documentation opportunities"
+msgstr ""
+
+#: src/Admin/Tools.php:56
+msgid "Review active discussions that still need a solution. Zero-result search counts and AI abstentions indicate demand without exposing private queries."
+msgstr ""
+
+#: src/Admin/Tools.php:70
+#: src/Admin/Tools.php:85
+#: src/Frontend/Extras.php:233
+msgid "Member ID"
+msgstr ""
+
+#: src/Admin/Tools.php:70
+msgid "Reviewed badge"
+msgstr ""
+
+#: src/Admin/Tools.php:75
+msgid "Award"
+msgstr ""
+
+#: src/Admin/Tools.php:75
+msgid "Revoke"
+msgstr ""
+
+#: src/Admin/Tools.php:75
+msgid "Review explanation"
+msgstr ""
+
+#: src/Admin/Tools.php:77
+msgid "Reviewed achievements"
+msgstr ""
+
+#: src/Admin/Tools.php:77
+msgid "Badges recognize contributions and grant no permissions. Automatic badges depend on current public evidence."
+msgstr ""
+
+#: src/Admin/Tools.php:77
+msgid "Save reviewed badge"
+msgstr ""
+
+#: src/Admin/Tools.php:81
+msgid "Reconcile source awards"
+msgstr ""
+
+#: src/Admin/Tools.php:83
+msgid "Reviewed reputation correction"
+msgstr ""
+
+#: src/Admin/Tools.php:83
+msgid "Corrections create an explainable ledger event. Reports and moderation actions do not automatically change reputation."
+msgstr ""
+
+#: src/Admin/Tools.php:85
+msgid "Record correction"
+msgstr ""
+
+#: src/Admin/Tools.php:85
+msgid "Points, −1000 to 1000"
+msgstr ""
+
+#: src/Admin/Tools.php:85
+msgid "Explanation"
+msgstr ""
+
+#: src/Admin/Tools.php:96
+msgid "Reported private message"
+msgstr ""
+
+#: src/Admin/Tools.php:96
+msgid "A participant explicitly shared this selected message for review."
+msgstr ""
+
+#: src/Admin/Tools.php:96
+msgid "Close reviewed report"
+msgstr ""
+
+#: src/Application/Operations.php:22
+msgid "This feature is unavailable."
+msgstr ""
+
+#: src/Application/Operations.php:24
+msgid "Too many request fields."
+msgstr ""
+
+#: src/Application/Operations.php:27
+msgid "Invalid request field."
+msgstr ""
+
+#: src/Application/Operations.php:29
+msgid "A scalar request value is required."
+msgstr ""
+
+#: src/Application/Operations.php:31
+msgid "Invalid request value."
+msgstr ""
+
+#: src/Bootstrap/Plugin.php:32
+msgid "Forum Intelligence requires active bbPress 2.6 or later. Install or activate bbPress."
+msgstr ""
+
+#: src/Bootstrap/Plugin.php:36
+msgid "Forum Intelligence could not upgrade its database. Check database privileges and retry activation."
+msgstr ""
+
+#: src/Domain/AI/Answers.php:14
+msgid "Sign in with posting permission to ask the community."
+msgstr ""
+
+#: src/Domain/AI/Answers.php:149
+msgid "We could not find a sufficiently supported answer in this community."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:13
+#: src/Frontend/Hub.php:388
+msgid "Helpful"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:14
+#: src/Frontend/Hub.php:399
+msgid "Not helpful"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:15
+msgid "Inaccurate"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:16
+msgid "Outdated"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:17
+msgid "Missing context"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:22
+msgid "Needs review"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:23
+msgid "Reviewed and resolved"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:24
+msgid "Reviewed and dismissed"
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:72
+msgid "This answer feedback is unavailable. Ask again for a current answer."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:102
+msgid "The supporting evidence changed. Ask again before sending feedback."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:108
+msgid "Invalid feedback."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:111
+#: src/Domain/Engagement/Engagement.php:130
+#: src/Integration/BbPress/Access.php:65
+msgid "You cannot participate in this discussion."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:197
+msgid "Choose a valid feedback review."
+msgstr ""
+
+#: src/Domain/AI/Feedback.php:207
+msgid "Another reviewer changed this feedback. Refresh before trying again."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:13
+msgid "Attachment upload permission is required."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:15
+#: src/Domain/Attachments/Attachments.php:49
+msgid "Uploads to restricted discussions require protected storage."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:19
+msgid "Upload a valid file no larger than 5 MB."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:32
+msgid "The actual file type does not match an allowed extension."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:35
+msgid "Executable content is not allowed."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:37
+msgid "The upload was rejected by the file scanner."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:52
+msgid "This post already has five attachments."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:104
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:34
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:37
+#: src/Infrastructure/Storage/PublicMediaStorage.php:49
+#: src/Infrastructure/Storage/PublicMediaStorage.php:52
+msgid "Attachment unavailable."
+msgstr ""
+
+#: src/Domain/Attachments/Attachments.php:108
+msgid "The original storage backend must be restored to access this file."
+msgstr ""
+
+#: src/Domain/Community/Following.php:11
+msgid "Participation permission is required."
+msgstr ""
+
+#: src/Domain/Community/Following.php:13
+msgid "Invalid follow preference."
+msgstr ""
+
+#: src/Domain/Community/Following.php:17
+msgid "Invalid follow target."
+msgstr ""
+
+#: src/Domain/Community/Following.php:20
+msgid "Choose another member."
+msgstr ""
+
+#: src/Domain/Community/Following.php:22
+msgid "Invalid tag."
+msgstr ""
+
+#: src/Domain/Community/Following.php:99
+msgid "Sign in to view your feed."
+msgstr ""
+
+#: src/Domain/Community/SavedSearches.php:15
+#: src/Domain/Notifications/Push.php:160
+msgid "Sign in with participation permission."
+msgstr ""
+
+#: src/Domain/Community/SavedSearches.php:20
+msgid "Enter at least three characters."
+msgstr ""
+
+#: src/Domain/Community/SavedSearches.php:27
+#: src/Domain/Community/SavedSearches.php:36
+msgid "Use a valid saved-search filter."
+msgstr ""
+
+#: src/Domain/Community/SavedSearches.php:53
+msgid "You can save up to five searches."
+msgstr ""
+
+#: src/Domain/Community/SavedSearches.php:79
+msgid "Saved search unavailable."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:12
+msgid "Choose a forum for a topic draft or a topic for a reply draft."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:14
+msgid "Sign in to manage your drafts."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:17
+msgid "Posting is unavailable in this discussion."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:30
+msgid "A newer draft was saved in another tab. Recover it before saving again; your current text has been kept."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:35
+#: src/Domain/Composer/Drafts.php:69
+msgid "Drafts support up to 200 title characters and 12,000 content characters."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:65
+msgid "Your signed-in account or site changed. Reload this discussion before continuing."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:114
+msgid "Topic editing and publication permissions are required."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:117
+msgid "Choose a future UTC publication time within one year."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:128
+msgid "The topic could not be scheduled."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:140
+msgid "Provide a JSON object mapping forum IDs to template text."
+msgstr ""
+
+#: src/Domain/Composer/Drafts.php:144
+msgid "Invalid template or forum."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:17
+msgid "Provide a JSON list of no more than 20 contextual templates."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:21
+msgid "Use unique template identifiers and the supported template fields."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:24
+#: src/Domain/Composer/Templates.php:57
+msgid "Choose a forum."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:40
+msgid "Template labels, criteria and text must be plain text within their limits."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:44
+msgid "Each template needs a label and nonempty guidance."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:50
+msgid "The template configuration could not be saved. Please retry."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:63
+msgid "Choose a valid template context."
+msgstr ""
+
+#: src/Domain/Composer/Templates.php:106
+msgid "Forum guidance"
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:15
+msgid "Provide a JSON list of no more than 20 fields."
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:19
+msgid "Invalid field identifier or type."
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:22
+msgid "Field identifiers must be unique."
+msgstr ""
+
+#. translators: %s is the field label.
+#: src/Domain/Composer/TopicFields.php:51
+#, php-format
+msgid "Complete the required field: %s"
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:53
+msgid "Invalid field value."
+msgstr ""
+
+#. translators: %s is the field label.
+#: src/Domain/Composer/TopicFields.php:98
+#, php-format
+msgid "Check the value for: %s"
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:106
+msgid "Topic editing permission is required."
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:177
+msgid "Topic details"
+msgstr ""
+
+#: src/Domain/Composer/TopicFields.php:192
+msgid "Choose an option"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:27
+msgid "Like"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:28
+msgid "Helpful reaction"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:29
+msgid "Insightful"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:30
+msgid "Thanks"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:35
+msgid "Remove Like reaction"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:36
+msgid "Remove Helpful reaction"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:37
+msgid "Remove Insightful reaction"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:38
+msgid "Remove Thanks reaction"
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:47
+#: src/Domain/Engagement/Engagement.php:56
+msgid "Invalid reaction."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:88
+msgid "Votes and reactions are disabled."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:91
+msgid "This vote is not enabled."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:94
+msgid "You cannot vote on your own content."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:102
+msgid "Only accepted solutions can be confirmed."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:109
+msgid "Vote on a topic or reply."
+msgstr ""
+
+#: src/Domain/Engagement/Engagement.php:120
+#: src/Domain/Engagement/Engagement.php:133
+msgid "This discussion changed. Refresh and retry."
+msgstr ""
+
+#: src/Domain/Knowledge/AutoDraft.php:39
+msgid "Automatic drafts require transactional native and plugin storage."
+msgstr ""
+
+#: src/Domain/Knowledge/AutoDraft.php:52
+#: src/Domain/Knowledge/AutoDraft.php:57
+msgid "Automatic article draft permission or source changed."
+msgstr ""
+
+#: src/Domain/Knowledge/Automation.php:41
+msgid "Automatic summary permission or timing changed."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:14
+msgid "Source review"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:35
+msgid "Source verification was not recorded. Reopen the source review and check your current access."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:44
+msgid "Source review is unavailable."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:46
+msgid "The source discussion has changed. Review the article before verifying it."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:46
+msgid "The source discussion matches this article’s recorded provenance."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:47
+msgid "Review source discussion"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:49
+msgid "Open source editor and revisions"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:52
+msgid "Last verified (UTC):"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:54
+msgid "No human verification has been recorded."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:56
+msgid "Some current sources are unavailable. Verification cannot be recorded."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:61
+msgid "Source comparison is unavailable. Reopen this review and check your current access."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:64
+msgid "Source comparison"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:66
+msgid "The accepted solution selection has changed."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:69
+msgid "The discussion changed outside the recorded source window. Review the full source discussion."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:71
+msgid "No current source differences were found."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:74
+msgid "Added to the source window"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:75
+msgid "Left the current source window"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:76
+msgid "Changed; exact text baseline unavailable"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:77
+msgid "Source metadata changed"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:78
+msgid "Source text changed"
+msgstr ""
+
+#. translators: %d: Native source post ID.
+#: src/Domain/Knowledge/Editorial.php:84
+#, php-format
+msgid "Source #%d"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:86
+msgid "Compare recorded and current text"
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:88
+msgid "An exact revision comparison is unavailable. Review the current source."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:95
+msgid "More sources changed. Review the full source discussion."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:99
+msgid "I reviewed the source discussion and verified this article."
+msgstr ""
+
+#: src/Domain/Knowledge/Editorial.php:100
+msgid "Save the article to record this review. Human article text and summary locks are preserved."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:37
+#: src/Domain/Knowledge/Targets.php:9
+msgid "Community Knowledge"
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:38
+msgid "Knowledge article"
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:109
+#: src/Domain/Knowledge/Knowledge.php:114
+#: src/Domain/Knowledge/Knowledge.php:119
+#: src/Domain/Knowledge/Knowledge.php:126
+#: src/Domain/Knowledge/Knowledge.php:129
+msgid "The stored summary is unavailable. Reopen the review and correct it explicitly."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:183
+msgid "Invalid knowledge action."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:208
+msgid "Unlock the edited summary before regeneration."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:245
+#: src/Domain/Knowledge/Knowledge.php:250
+#: src/Domain/Knowledge/Knowledge.php:260
+msgid "The stored summary changed. Reopen the review."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:292
+#: src/Domain/Knowledge/Knowledge.php:304
+#: src/Domain/Moderation/Advisory.php:98
+msgid "Restricted discussions cannot be processed externally."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:410
+#: src/Domain/Knowledge/Knowledge.php:463
+#: src/Domain/Knowledge/Knowledge.php:671
+#: src/Domain/Knowledge/Recommendations.php:39
+#: src/Domain/Knowledge/Recommendations.php:45
+#: src/Domain/Knowledge/Recommendations.php:55
+#: src/Domain/Knowledge/Recommendations.php:60
+#: src/Domain/Knowledge/Recommendations.php:79
+#: src/Domain/Knowledge/Recommendations.php:156
+#: src/Domain/Knowledge/Recommendations.php:165
+#: src/Domain/Search/Duplicates.php:112
+#: src/Integration/BbPress/Access.php:60
+msgid "Content is unavailable."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:435
+#: src/Domain/Knowledge/Knowledge.php:471
+#: src/Domain/Knowledge/Knowledge.php:561
+#: src/Domain/Knowledge/Knowledge.php:684
+msgid "Editorial permission is required."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:492
+#: src/Infrastructure/Database/Store.php:109
+msgid "The operation could not be saved. Please retry."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:534
+msgid "This article may need review because its source discussion has changed."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:535
+msgid "Source discussion"
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:687
+msgid "Create and review a current summary before making a draft."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:695
+msgid "Editorial permission, target or source changed. Reopen the review."
+msgstr ""
+
+#: src/Domain/Knowledge/Knowledge.php:724
+#: src/Domain/Knowledge/Knowledge.php:733
+#: src/Domain/Knowledge/Knowledge.php:756
+#: src/Domain/Knowledge/NativeKnowledgeTarget.php:17
+msgid "The draft could not be created."
+msgstr ""
+
+#: src/Domain/Knowledge/Recommendations.php:27
+msgid "Recommend a solved discussion with a readable accepted answer."
+msgstr ""
+
+#: src/Domain/Knowledge/Recommendations.php:30
+msgid "Recommendation notes are limited to 2,000 characters."
+msgstr ""
+
+#: src/Domain/Knowledge/Recommendations.php:42
+#: src/Domain/Knowledge/Recommendations.php:153
+msgid "The recommendation could not be changed. Reopen the review queue."
+msgstr ""
+
+#: src/Domain/Knowledge/Recommendations.php:143
+msgid "Enable community knowledge to use its review queue."
+msgstr ""
+
+#: src/Domain/Knowledge/Targets.php:33
+msgid "The selected editorial target is unavailable or incompatible. Check its configuration."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:11
+msgid "Messaging participation permission is required."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:17
+msgid "This recipient is unavailable."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:62
+msgid "Messaging is blocked."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:65
+msgid "This conversation is closed."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:68
+msgid "Enter a message."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:135
+msgid "Choose a message in this conversation."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:143
+msgid "Message unavailable."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:158
+msgid "Invalid conversation action."
+msgstr ""
+
+#: src/Domain/Messaging/Messaging.php:163
+#: src/Domain/Messaging/Messaging.php:169
+#: src/Frontend/Extras.php:145
+msgid "Conversation unavailable."
+msgstr ""
+
+#: src/Domain/Moderation/Advisory.php:39
+#: src/Domain/Moderation/Advisory.php:95
+#: src/Domain/Moderation/Cases.php:44
+msgid "The case is unavailable."
+msgstr ""
+
+#: src/Domain/Moderation/Advisory.php:60
+#: src/Domain/Moderation/Advisory.php:63
+#: src/Domain/Moderation/Advisory.php:67
+msgid "The advisory response could not be verified."
+msgstr ""
+
+#: src/Domain/Moderation/Advisory.php:70
+msgid "The source changed; request a new review."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:13
+msgid "Choose a valid report reason."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:29
+msgid "Deleted content"
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:49
+msgid "Invalid moderation action."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:51
+msgid "Choose an authorized moderator."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:79
+msgid "Deletion permission is required."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:98
+msgid "Only topics can be closed or reopened."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:123
+msgid "The content state could not be changed. Review the recorded action intent and retry."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:158
+msgid "A credential-like pattern needs human review."
+msgstr ""
+
+#: src/Domain/Moderation/Cases.php:163
+msgid "An email address may contain personal information."
+msgstr ""
+
+#: src/Domain/Notifications/Mentions.php:32
+msgid "Participation permission is required to find mention recipients."
+msgstr ""
+
+#: src/Domain/Notifications/Mentions.php:35
+msgid "Discussion unavailable."
+msgstr ""
+
+#: src/Domain/Notifications/Mentions.php:38
+msgid "Use the mention tools provided by the active community integration."
+msgstr ""
+
+#: src/Domain/Notifications/Mentions.php:41
+msgid "Type 2–30 username characters to find a member."
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:136
+msgid "Choose a valid notification filter."
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:160
+msgid "Knowledge article needs source review"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:160
+msgid "Community achievement"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:160
+msgid "Private message"
+msgstr ""
+
+#. translators: %d is the number of currently authorized unread notifications.
+#: src/Domain/Notifications/Notifications.php:195
+#, php-format
+msgid "%d unread notification"
+msgid_plural "%d unread notifications"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %d is a lower bound on currently authorized unread notifications.
+#: src/Domain/Notifications/Notifications.php:198
+#, php-format
+msgid "At least %d unread notifications"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:200
+#: src/Frontend/Frontend.php:34
+#: src/Frontend/NotificationCenter.php:33
+#: src/Frontend/NotificationCenter.php:59
+msgid "Notifications"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:210
+#: src/Frontend/Hub.php:129
+msgid "Replies"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:211
+msgid "New topics"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:212
+msgid "Solutions"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:213
+msgid "Mentions"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:215
+msgid "Knowledge articles"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:216
+msgid "Article source reviews"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:217
+msgid "Private messages"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:218
+msgid "Polls"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:219
+msgid "Achievements"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:220
+msgid "Saved-search matches"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:226
+msgid "Invalid notification action."
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:249
+msgid "Invalid email preference."
+msgstr ""
+
+#. translators: %s is the discussion URL.
+#: src/Domain/Notifications/Notifications.php:270
+#, php-format
+msgid "Community activity: %s"
+msgstr ""
+
+#. translators: %s is the preferences URL.
+#: src/Domain/Notifications/Notifications.php:275
+#, php-format
+msgid "Manage notification preferences after signing in: %s"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:276
+msgid "Your community updates"
+msgstr ""
+
+#: src/Domain/Notifications/Notifications.php:287
+msgid "Sign in to manage notifications."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:39
+msgid "Push requires the WebPush library and server VAPID configuration."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:41
+#: src/Domain/Notifications/Push.php:46
+msgid "Invalid browser subscription."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:49
+msgid "Unsupported push encoding."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:54
+msgid "Remove a device before adding another."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:128
+msgid "Community update"
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:129
+msgid "Sign in to view your notifications."
+msgstr ""
+
+#: src/Domain/Notifications/Push.php:150
+msgid "The push endpoint is not an approved browser service."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:15
+msgid "Topic unavailable."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:18
+msgid "Provide plain-text poll options."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:22
+msgid "Provide 2–10 distinct choices and valid poll settings."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:25
+msgid "Choose a closing date within one year."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:28
+msgid "The poll must start before it closes."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:44
+msgid "A poll already exists."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:54
+#: src/Domain/Polls/Polls.php:71
+msgid "Choose valid poll options."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:64
+#: src/Domain/Polls/Polls.php:125
+msgid "Poll unavailable."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:67
+msgid "Voting has not started."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:69
+msgid "Voting has closed."
+msgstr ""
+
+#: src/Domain/Polls/Polls.php:75
+msgid "Your vote is already recorded."
+msgstr ""
+
+#: src/Domain/Relationships/Relationships.php:15
+#: src/Domain/Relationships/Relationships.php:62
+msgid "Invalid topic relationship."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:15
+msgid "Sign in to manage achievements."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:31
+msgid "Accepted answer contributor"
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:32
+msgid "At least one currently accepted public reply."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:36
+msgid "Repeated helpful contributor"
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:37
+msgid "Three distinct public contributions, each with a net helpful vote count of at least three."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:41
+msgid "Verified expert"
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:42
+msgid "A moderator reviewed expertise and recorded an explanation. This badge grants no permissions."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:46
+msgid "Community mentor"
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:47
+msgid "A moderator reviewed mentoring contributions and recorded an explanation. This badge grants no permissions."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:135
+msgid "Current public contribution evidence."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:141
+msgid "Choose a review-based badge, active member and an explanation of 10–1000 characters."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:245
+#: src/Domain/Reputation/Reputation.php:12
+msgid "Member unavailable."
+msgstr ""
+
+#: src/Domain/Reputation/Badges.php:247
+msgid "Badge history is available to its owner and moderators."
+msgstr ""
+
+#: src/Domain/Reputation/Reputation.php:162
+msgid "Provide a member, bounded points and an explanation."
+msgstr ""
+
+#: src/Domain/Search/DateRange.php:14
+msgid "Use a valid publication date in YYYY-MM-DD format."
+msgstr ""
+
+#: src/Domain/Search/DateRange.php:18
+msgid "The start date must be on or before the end date."
+msgstr ""
+
+#: src/Domain/Search/Duplicates.php:84
+#: src/Domain/Search/Duplicates.php:122
+msgid "This suggestion feedback is unavailable. Continue composing your topic."
+msgstr ""
+
+#: src/Domain/Search/Duplicates.php:107
+#: src/Domain/Search/Duplicates.php:115
+msgid "Suggestion feedback is unavailable for this account or forum. Continue composing your topic."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:55
+msgid "A topic is required."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:58
+msgid "Invalid solution action."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:62
+msgid "The reply must belong to this topic."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:71
+msgid "The solution changed. Refresh and retry."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:78
+msgid "A topic can have at most ten accepted answers."
+msgstr ""
+
+#: src/Domain/Solutions/Solutions.php:90
+msgid "Accept the reply first."
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:39
+msgid "Drafts are private to your account. Recovery replaces unsaved composer text; copy it first if needed."
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:40
+msgid "Save draft"
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:42
+#: src/Frontend/Frontend.php:129
+msgid "Recover saved draft"
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:42
+msgid "Discard saved draft"
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:54
+msgid "The draft request could not be verified."
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:61
+msgid "Use the new-topic or reply composer to manage drafts."
+msgstr ""
+
+#: src/Frontend/ComposerDrafts.php:80
+msgid "The draft could not be saved. Your current text has been kept."
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:24
+#: src/Frontend/Frontend.php:116
+msgid "Suggested question template"
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:24
+#: src/Frontend/Frontend.php:118
+msgid "Optional guidance: copy the sections you need. Choosing guidance never changes your topic classification or existing text."
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:28
+#: src/Frontend/Frontend.php:117
+msgid "Browse applicable templates"
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:30
+#: src/Frontend/Frontend.php:112
+msgid "Question type"
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:31
+#: src/Frontend/Frontend.php:113
+msgid "Product"
+msgstr ""
+
+#: src/Frontend/ComposerTemplates.php:32
+#: src/Frontend/Frontend.php:114
+msgid "Category"
+msgstr ""
+
+#: src/Frontend/Downloads.php:19
+msgid "The download could not be started."
+msgstr ""
+
+#: src/Frontend/Extras.php:41
+#: src/Frontend/Hub.php:299
+msgid "Browser notifications"
+msgstr ""
+
+#: src/Frontend/Extras.php:41
+msgid "Enable only on a device you trust. Notifications contain a generic activity message."
+msgstr ""
+
+#: src/Frontend/Extras.php:41
+#: src/Frontend/Hub.php:299
+msgid "Enable for this browser"
+msgstr ""
+
+#: src/Frontend/Extras.php:41
+msgid "Unsubscribe all my browsers"
+msgstr ""
+
+#: src/Frontend/Extras.php:54
+msgid "Community notification preferences"
+msgstr ""
+
+#: src/Frontend/Extras.php:54
+#: src/Frontend/Hub.php:232
+msgid "Email delivery"
+msgstr ""
+
+#: src/Frontend/Extras.php:89
+msgid "Protected download"
+msgstr ""
+
+#: src/Frontend/Extras.php:89
+msgid "Public file; its URL remains accessible"
+msgstr ""
+
+#: src/Frontend/Extras.php:92
+msgid "File, up to 5 MB; JPEG, PNG, WebP, PDF or plain text"
+msgstr ""
+
+#: src/Frontend/Extras.php:94
+msgid "Upload attachment"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Poll choices, one per line"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Maximum selections"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Closing time, UTC"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Starting time, UTC; leave empty to start now"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Results visible to"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Members who voted"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Everyone who can read this topic"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "After the poll closes"
+msgstr ""
+
+#: src/Frontend/Extras.php:102
+msgid "Allow changing votes"
+msgstr ""
+
+#: src/Frontend/Extras.php:104
+msgid "Create a topic poll"
+msgstr ""
+
+#: src/Frontend/Extras.php:112
+msgid "Create poll"
+msgstr ""
+
+#: src/Frontend/Extras.php:119
+msgid "Schedule this topic"
+msgstr ""
+
+#: src/Frontend/Extras.php:119
+msgid "Scheduling removes this topic from view until its future publication time."
+msgstr ""
+
+#: src/Frontend/Extras.php:119
+msgid "Schedule publication"
+msgstr ""
+
+#: src/Frontend/Extras.php:119
+msgid "Publication time, UTC"
+msgstr ""
+
+#: src/Frontend/Extras.php:126
+msgid "Private messaging is unavailable."
+msgstr ""
+
+#: src/Frontend/Extras.php:128
+msgid "Private conversations"
+msgstr ""
+
+#: src/Frontend/Extras.php:128
+msgid "Messages are stored on this site. Reporting shares a selected message with moderators. Leaving removes your access; other participants retain their copies."
+msgstr ""
+
+#: src/Frontend/Extras.php:129
+msgid "Start conversation"
+msgstr ""
+
+#: src/Frontend/Extras.php:129
+msgid "Recipient member ID"
+msgstr ""
+
+#: src/Frontend/Extras.php:129
+msgid "Message"
+msgstr ""
+
+#. translators: %s is the conversation identifier.
+#: src/Frontend/Extras.php:151
+#, php-format
+msgid "Conversation %s"
+msgstr ""
+
+#: src/Frontend/Extras.php:160
+msgid "Report this message"
+msgstr ""
+
+#: src/Frontend/Extras.php:172
+msgid "Next messages"
+msgstr ""
+
+#: src/Frontend/Extras.php:182
+msgid "First messages"
+msgstr ""
+
+#: src/Frontend/Extras.php:184
+msgid "Send reply"
+msgstr ""
+
+#: src/Frontend/Extras.php:184
+msgid "Reply"
+msgstr ""
+
+#: src/Frontend/Extras.php:193
+msgid "Mark read"
+msgstr ""
+
+#: src/Frontend/Extras.php:201
+msgid "Leave conversation"
+msgstr ""
+
+#: src/Frontend/Extras.php:205
+msgid "Conversation pages"
+msgstr ""
+
+#: src/Frontend/Extras.php:214
+msgid "Previous conversations"
+msgstr ""
+
+#: src/Frontend/Extras.php:223
+msgid "Older conversations"
+msgstr ""
+
+#: src/Frontend/Extras.php:225
+msgid "Block a member"
+msgstr ""
+
+#: src/Frontend/Extras.php:232
+msgid "Block"
+msgstr ""
+
+#: src/Frontend/Frontend.php:37
+msgid "Find a member to mention"
+msgstr ""
+
+#: src/Frontend/Frontend.php:38
+msgid "Finding members…"
+msgstr ""
+
+#: src/Frontend/Frontend.php:39
+msgid "Type at least two username characters. Choose a member to insert @username into your text."
+msgstr ""
+
+#: src/Frontend/Frontend.php:40
+msgid "No matching members are available for this discussion."
+msgstr ""
+
+#: src/Frontend/Frontend.php:41
+msgid "Member suggestions are unavailable. You can type a known @username and continue posting."
+msgstr ""
+
+#: src/Frontend/Frontend.php:42
+msgid "Mention inserted. Your existing text was kept."
+msgstr ""
+
+#: src/Frontend/Frontend.php:44
+msgid "Another application manages offline access on this site. Contact the administrator to integrate browser notifications."
+msgstr ""
+
+#: src/Frontend/Frontend.php:51
+msgid "Formatting"
+msgstr ""
+
+#: src/Frontend/Frontend.php:52
+msgid "Bold"
+msgstr ""
+
+#: src/Frontend/Frontend.php:53
+msgid "Italic"
+msgstr ""
+
+#: src/Frontend/Frontend.php:54
+msgid "Code"
+msgstr ""
+
+#: src/Frontend/Frontend.php:55
+msgid "Quote"
+msgstr ""
+
+#: src/Frontend/Frontend.php:56
+msgid "Preview discussion"
+msgstr ""
+
+#: src/Frontend/Frontend.php:57
+msgid "Close preview"
+msgstr ""
+
+#: src/Frontend/Frontend.php:58
+msgid "text"
+msgstr ""
+
+#: src/Frontend/Frontend.php:59
+msgid "Discussion preview"
+msgstr ""
+
+#: src/Frontend/Frontend.php:60
+msgid "Review formatting before posting. Links and media are inactive in preview. Your editor text is kept."
+msgstr ""
+
+#: src/Frontend/Frontend.php:61
+msgid "Preparing preview…"
+msgstr ""
+
+#: src/Frontend/Frontend.php:62
+msgid "Preview ready. Your text has not been posted."
+msgstr ""
+
+#: src/Frontend/Frontend.php:63
+msgid "Your text changed. Preview again to review the latest version."
+msgstr ""
+
+#: src/Frontend/Frontend.php:64
+msgid "Preview is unavailable. Keep editing or copy your text before reloading."
+msgstr ""
+
+#: src/Frontend/Frontend.php:65
+msgid "Formatting applied to the selection."
+msgstr ""
+
+#: src/Frontend/Frontend.php:66
+msgid "Preview supports up to 200 title characters and 12,000 content characters."
+msgstr ""
+
+#: src/Frontend/Frontend.php:67
+msgid "Preview is unavailable for this account or discussion. Copy your text and reload before continuing."
+msgstr ""
+
+#: src/Frontend/Frontend.php:68
+msgid "Preview limit reached. Please try again in a minute."
+msgstr ""
+
+#: src/Frontend/Frontend.php:69
+msgid "Formatting is unavailable. You can keep editing in the native composer."
+msgstr ""
+
+#: src/Frontend/Frontend.php:72
+msgid "Encrypted browser copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:73
+msgid "Optional: save an encrypted copy in this browser for 24 hours. Use a unique passphrase of 16–128 characters. Keep this page open to save while offline; reconnect to recover. Forgetting the passphrase makes recovery impossible. Site drafts still save separately."
+msgstr ""
+
+#: src/Frontend/Frontend.php:74
+msgid "Passphrase for this browser copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:75
+msgid "Enable or unlock"
+msgstr ""
+
+#: src/Frontend/Frontend.php:76
+msgid "Save encrypted copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:77
+msgid "Recover encrypted copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:78
+msgid "Remove encrypted copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:79
+msgid "Lock browser copy"
+msgstr ""
+
+#: src/Frontend/Frontend.php:80
+msgid "Browser copy unlocked for this page. Save a copy when needed."
+msgstr ""
+
+#: src/Frontend/Frontend.php:81
+msgid "Encrypted browser copy saved for 24 hours."
+msgstr ""
+
+#: src/Frontend/Frontend.php:82
+msgid "Browser copy recovered after current permission checks."
+msgstr ""
+
+#: src/Frontend/Frontend.php:83
+msgid "Encrypted browser copy removed."
+msgstr ""
+
+#: src/Frontend/Frontend.php:84
+msgid "Browser copy locked. Enter the passphrase to unlock it again."
+msgstr ""
+
+#: src/Frontend/Frontend.php:85
+msgid "Use a passphrase of 16–128 characters."
+msgstr ""
+
+#: src/Frontend/Frontend.php:86
+msgid "The encrypted copy could not be opened. Check the passphrase; the copy may be damaged."
+msgstr ""
+
+#: src/Frontend/Frontend.php:87
+msgid "This encrypted copy expired. Remove it to start a new copy."
+msgstr ""
+
+#: src/Frontend/Frontend.php:88
+msgid "Another tab changed this encrypted copy. Lock and unlock again before saving."
+msgstr ""
+
+#: src/Frontend/Frontend.php:89
+msgid "No encrypted copy exists for this discussion."
+msgstr ""
+
+#: src/Frontend/Frontend.php:90
+msgid "This account has ten browser copies. Remove an older copy before saving another."
+msgstr ""
+
+#: src/Frontend/Frontend.php:91
+msgid "Browser copies support up to 200 title characters and 12,000 content characters."
+msgstr ""
+
+#: src/Frontend/Frontend.php:92
+msgid "Your current text was kept. Clear the editor before recovering a browser copy."
+msgstr ""
+
+#: src/Frontend/Frontend.php:93
+msgid "Browser copies are unavailable. Keep this page open or copy your text. Recovery requires an online permission check."
+msgstr ""
+
+#: src/Frontend/Frontend.php:97
+msgid "None of these discussions answer my question"
+msgstr ""
+
+#: src/Frontend/Frontend.php:98
+msgid "Suggestions dismissed. Your text is kept and you can continue posting."
+msgstr ""
+
+#: src/Frontend/Frontend.php:99
+msgid "Relevance score"
+msgstr ""
+
+#: src/Frontend/Frontend.php:100
+msgid "This is a relevance score, not a probability that a discussion answers your question."
+msgstr ""
+
+#: src/Frontend/Frontend.php:101
+msgid "Opens in a new tab"
+msgstr ""
+
+#: src/Frontend/Frontend.php:103
+msgid "Type at least 12 characters to find existing discussions."
+msgstr ""
+
+#: src/Frontend/Frontend.php:104
+msgid "Finding related discussions…"
+msgstr ""
+
+#: src/Frontend/Frontend.php:105
+msgid "These discussions may help. You can continue posting."
+msgstr ""
+
+#: src/Frontend/Frontend.php:106
+msgid "No matching discussions found. You can continue posting."
+msgstr ""
+
+#: src/Frontend/Frontend.php:107
+msgid "Suggestions are unavailable. You can continue posting."
+msgstr ""
+
+#: src/Frontend/Frontend.php:108
+#: src/Frontend/Frontend.php:235
+#: src/Frontend/Hub.php:49
+#: src/Frontend/Hub.php:114
+#: src/Integration/BbPress/TopicFilters.php:43
+msgid "Solved"
+msgstr ""
+
+#: src/Frontend/Frontend.php:109
+msgid "Use this question template"
+msgstr ""
+
+#: src/Frontend/Frontend.php:111
+msgid "Optional template context"
+msgstr ""
+
+#: src/Frontend/Frontend.php:115
+msgid "Any"
+msgstr ""
+
+#: src/Frontend/Frontend.php:119
+msgid "Finding template guidance…"
+msgstr ""
+
+#: src/Frontend/Frontend.php:120
+msgid "Template guidance is unavailable. Your current text has been kept."
+msgstr ""
+
+#: src/Frontend/Frontend.php:121
+msgid "No template matches these choices. You can continue writing."
+msgstr ""
+
+#: src/Frontend/Frontend.php:123
+msgid "Question template added. Replace each section with your details."
+msgstr ""
+
+#: src/Frontend/Frontend.php:124
+msgid "Your existing text was kept. Copy the suggested template if you need it."
+msgstr ""
+
+#: src/Frontend/Frontend.php:125
+msgid "Draft saved on this site."
+msgstr ""
+
+#: src/Frontend/Frontend.php:126
+msgid "A newer draft was saved in another tab. Copy your current text, then recover the newer draft."
+msgstr ""
+
+#: src/Frontend/Frontend.php:127
+msgid "Your current text was kept. Clear the editor before recovering the saved draft."
+msgstr ""
+
+#: src/Frontend/Frontend.php:128
+msgid "Draft could not be saved. Keep this page open or copy your text."
+msgstr ""
+
+#: src/Frontend/Frontend.php:130
+msgid "Saved draft recovered."
+msgstr ""
+
+#: src/Frontend/Frontend.php:134
+msgid "Push notifications disabled for this browser."
+msgstr ""
+
+#: src/Frontend/Frontend.php:135
+msgid "Push permission was not granted."
+msgstr ""
+
+#: src/Frontend/Frontend.php:136
+msgid "Push notifications enabled for this browser."
+msgstr ""
+
+#: src/Frontend/Frontend.php:153
+msgid "The request could not be verified."
+msgstr ""
+
+#: src/Frontend/Frontend.php:158
+msgid "Use the preview or recovery controls on the discussion page."
+msgstr ""
+
+#: src/Frontend/Frontend.php:162
+#: src/Rest/Routes.php:56
+msgid "The request is too large."
+msgstr ""
+
+#: src/Frontend/Frontend.php:180
+#: src/Rest/Routes.php:87
+msgid "The operation failed. Please retry."
+msgstr ""
+
+#: src/Frontend/Frontend.php:193
+#: src/Frontend/Hub.php:54
+msgid "Accepted solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:207
+msgid "Use as primary solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:222
+msgid "Remove solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:222
+msgid "Accept solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:234
+#: src/Frontend/Hub.php:114
+#: src/Integration/BbPress/TopicFilters.php:43
+msgid "Solution status"
+msgstr ""
+
+#: src/Frontend/Frontend.php:235
+msgid "Awaiting a solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:237
+msgid "Go to accepted solution"
+msgstr ""
+
+#: src/Frontend/Frontend.php:240
+msgid "Last solution update"
+msgstr ""
+
+#. translators: %d is the number of member confirmations across accepted replies.
+#: src/Frontend/Frontend.php:248
+#, php-format
+msgid "%d member confirmation"
+msgid_plural "%d member confirmations"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/Frontend/Frontend.php:252
+msgid "Solution history"
+msgstr ""
+
+#: src/Frontend/Frontend.php:255
+msgid "Accepted answer"
+msgstr ""
+
+#: src/Frontend/Frontend.php:256
+msgid "Removed answer"
+msgstr ""
+
+#: src/Frontend/Frontend.php:257
+msgid "Changed primary answer"
+msgstr ""
+
+#: src/Frontend/Frontend.php:258
+msgid "Marked solved"
+msgstr ""
+
+#: src/Frontend/Frontend.php:259
+msgid "Reopened"
+msgstr ""
+
+#: src/Frontend/Frontend.php:260
+msgid "Source invalidated"
+msgstr ""
+
+#: src/Frontend/Frontend.php:262
+msgid "Solution updated"
+msgstr ""
+
+#: src/Frontend/Frontend.php:276
+msgid "Reopen topic"
+msgstr ""
+
+#: src/Frontend/Frontend.php:276
+msgid "Mark solved"
+msgstr ""
+
+#. translators: %s is the topic title.
+#: src/Frontend/Frontend.php:287
+#, php-format
+msgid "[Solved] %s"
+msgstr ""
+
+#: src/Frontend/Hub.php:18
+msgid "Existing discussions will appear here as you compose your question."
+msgstr ""
+
+#: src/Frontend/Hub.php:44
+msgid "No matching discussions found. Try fewer words or a different term."
+msgstr ""
+
+#: src/Frontend/Hub.php:57
+msgid "Ranking explanation"
+msgstr ""
+
+#: src/Frontend/Hub.php:59
+msgid "Lexical contribution"
+msgstr ""
+
+#: src/Frontend/Hub.php:60
+msgid "Semantic contribution"
+msgstr ""
+
+#: src/Frontend/Hub.php:61
+msgid "Solved-topic contribution"
+msgstr ""
+
+#: src/Frontend/Hub.php:62
+msgid "Vote contribution"
+msgstr ""
+
+#: src/Frontend/Hub.php:71
+msgid "Full-text index"
+msgstr ""
+
+#: src/Frontend/Hub.php:72
+msgid "Native WordPress search"
+msgstr ""
+
+#: src/Frontend/Hub.php:73
+msgid "Semantic candidate with current lexical coverage"
+msgstr ""
+
+#: src/Frontend/Hub.php:78
+msgid "Retrieval path"
+msgstr ""
+
+#: src/Frontend/Hub.php:80
+msgid "The score combines lexical coverage (65%), semantic similarity (30%), solved-topic status (up to 2.5%) and positive net votes (up to 2.5%). It is a relevance score, not a probability of correctness."
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+msgid "Search the community"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+#: src/Integration/BbPress/TopicFilters.php:43
+msgid "All discussions"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+#: src/Integration/BbPress/TopicFilters.php:43
+msgid "Unsolved"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+msgid "Sort"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+msgid "Relevance"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+msgid "Recent"
+msgstr ""
+
+#: src/Frontend/Hub.php:114
+msgid "Search"
+msgstr ""
+
+#: src/Frontend/Hub.php:115
+msgid "Advanced search"
+msgstr ""
+
+#: src/Frontend/Hub.php:117
+msgid "Forum ID"
+msgstr ""
+
+#: src/Frontend/Hub.php:118
+msgid "Author ID"
+msgstr ""
+
+#: src/Frontend/Hub.php:119
+msgid "Topic tag slug"
+msgstr ""
+
+#: src/Frontend/Hub.php:120
+msgid "Minimum net votes"
+msgstr ""
+
+#: src/Frontend/Hub.php:121
+msgid "Published on or after (UTC)"
+msgstr ""
+
+#: src/Frontend/Hub.php:122
+msgid "Published on or before (UTC)"
+msgstr ""
+
+#: src/Frontend/Hub.php:125
+msgid "Content type"
+msgstr ""
+
+#: src/Frontend/Hub.php:127
+msgid "Topics and replies"
+msgstr ""
+
+#: src/Frontend/Hub.php:128
+msgid "Topics"
+msgstr ""
+
+#: src/Frontend/Hub.php:130
+msgid "Forums"
+msgstr ""
+
+#: src/Frontend/Hub.php:133
+msgid "Unanswered topics only"
+msgstr ""
+
+#: src/Frontend/Hub.php:135
+msgid "Show ranking explanations"
+msgstr ""
+
+#: src/Frontend/Hub.php:145
+#: src/Frontend/Hub.php:163
+msgid "Community search"
+msgstr ""
+
+#: src/Frontend/Hub.php:148
+msgid "Try this spelling:"
+msgstr ""
+
+#: src/Frontend/Hub.php:159
+msgid "Previous results"
+msgstr ""
+
+#: src/Frontend/Hub.php:161
+msgid "Next results"
+msgstr ""
+
+#: src/Frontend/Hub.php:168
+#: src/Frontend/Hub.php:171
+msgid "Ask the Community"
+msgstr ""
+
+#: src/Frontend/Hub.php:168
+msgid "Sign in to ask"
+msgstr ""
+
+#: src/Frontend/Hub.php:169
+msgid "Answers use community evidence and may be incomplete. Check the linked sources."
+msgstr ""
+
+#: src/Frontend/Hub.php:170
+msgid "Ask"
+msgstr ""
+
+#: src/Frontend/Hub.php:170
+msgid "Your question"
+msgstr ""
+
+#: src/Frontend/Hub.php:182
+msgid "This saved answer is no longer supported by current community evidence. Ask again for an updated result."
+msgstr ""
+
+#: src/Frontend/Hub.php:194
+msgid "Your change was saved."
+msgstr ""
+
+#: src/Frontend/Hub.php:200
+msgid "How useful was this generated answer?"
+msgstr ""
+
+#: src/Frontend/Hub.php:200
+msgid "Choose feedback"
+msgstr ""
+
+#: src/Frontend/Hub.php:205
+msgid "Feedback on this answer"
+msgstr ""
+
+#: src/Frontend/Hub.php:205
+msgid "Your selection helps moderators improve community documentation. Feedback does not train external models."
+msgstr ""
+
+#: src/Frontend/Hub.php:211
+msgid "Send answer feedback"
+msgstr ""
+
+#: src/Frontend/Hub.php:217
+msgid "Create a new topic"
+msgstr ""
+
+#: src/Frontend/Hub.php:223
+#: src/Frontend/Hub.php:226
+msgid "Community hub"
+msgstr ""
+
+#: src/Frontend/Hub.php:223
+msgid "Sign in"
+msgstr ""
+
+#: src/Frontend/Hub.php:226
+#: src/Frontend/NotificationCenter.php:45
+msgid "Community access is unavailable for this account."
+msgstr ""
+
+#: src/Frontend/Hub.php:235
+msgid "Immediate"
+msgstr ""
+
+#: src/Frontend/Hub.php:236
+msgid "Hourly digest"
+msgstr ""
+
+#: src/Frontend/Hub.php:237
+msgid "Daily digest"
+msgstr ""
+
+#: src/Frontend/Hub.php:238
+msgid "Weekly digest"
+msgstr ""
+
+#: src/Frontend/Hub.php:239
+msgid "Important activity only"
+msgstr ""
+
+#: src/Frontend/Hub.php:242
+msgid "Mute notification categories"
+msgstr ""
+
+#: src/Frontend/Hub.php:246
+msgid "Notification preferences"
+msgstr ""
+
+#: src/Frontend/Hub.php:246
+msgid "Save preferences"
+msgstr ""
+
+#: src/Frontend/Hub.php:248
+msgid "Followed discussions"
+msgstr ""
+
+#: src/Frontend/Hub.php:252
+msgid "Save up to five local keyword searches. Saved queries belong to your account and are never included in aggregate analytics or sent externally. Matching alerts are off until you enable them for each search; they cover new public topics and replies."
+msgstr ""
+
+#: src/Frontend/Hub.php:253
+msgid "Save search"
+msgstr ""
+
+#: src/Frontend/Hub.php:253
+msgid "Keywords"
+msgstr ""
+
+#: src/Frontend/Hub.php:261
+msgid "Disable matching alerts"
+msgstr ""
+
+#: src/Frontend/Hub.php:261
+msgid "Enable matching alerts"
+msgstr ""
+
+#: src/Frontend/Hub.php:262
+msgid "Remove saved search"
+msgstr ""
+
+#: src/Frontend/Hub.php:266
+msgid "Saved-search results are temporarily paused. Your preferences are saved; try viewing results again shortly."
+msgstr ""
+
+#: src/Frontend/Hub.php:266
+msgid "Saved-search results are unavailable. Try again shortly."
+msgstr ""
+
+#: src/Frontend/Hub.php:268
+msgid "Saved searches"
+msgstr ""
+
+#. translators: %s is the formatted reputation score.
+#: src/Frontend/Hub.php:274
+#, php-format
+msgid "Your visible reputation across up to 1,000 source posts: %s"
+msgstr ""
+
+#: src/Frontend/Hub.php:277
+msgid "Score explanation"
+msgstr ""
+
+#: src/Frontend/Hub.php:280
+msgid "Contribution profile"
+msgstr ""
+
+#: src/Frontend/Hub.php:286
+msgid "Enable achievements"
+msgstr ""
+
+#: src/Frontend/Hub.php:286
+msgid "Disable and erase achievements"
+msgstr ""
+
+#: src/Frontend/Hub.php:289
+msgid "Inactive"
+msgstr ""
+
+#: src/Frontend/Hub.php:289
+msgid "Award history"
+msgstr ""
+
+#: src/Frontend/Hub.php:291
+msgid "Awarded"
+msgstr ""
+
+#: src/Frontend/Hub.php:291
+msgid "Revoked"
+msgstr ""
+
+#: src/Frontend/Hub.php:295
+msgid "Your achievements"
+msgstr ""
+
+#: src/Frontend/Hub.php:299
+msgid "Disable for this browser"
+msgstr ""
+
+#: src/Frontend/Hub.php:310
+msgid "Discovery views"
+msgstr ""
+
+#: src/Frontend/Hub.php:312
+msgid "Trending"
+msgstr ""
+
+#: src/Frontend/Hub.php:313
+msgid "Questions you can help with"
+msgstr ""
+
+#: src/Frontend/Hub.php:314
+msgid "Solved discussions"
+msgstr ""
+
+#: src/Frontend/Hub.php:315
+msgid "Recent discussions"
+msgstr ""
+
+#: src/Frontend/Hub.php:325
+msgid "Discover discussions"
+msgstr ""
+
+#: src/Frontend/Hub.php:332
+msgid "Discover members with helpful public contributions in a topic tag. Results require at least three distinct sources; reputation and badges grant no permissions."
+msgstr ""
+
+#: src/Frontend/Hub.php:335
+msgid "Topic tag"
+msgstr ""
+
+#: src/Frontend/Hub.php:335
+msgid "Find contributors"
+msgstr ""
+
+#. translators: 1: formatted expertise points, 2: number of distinct public sources.
+#: src/Frontend/Hub.php:341
+#, php-format
+msgid "Expertise points: %1$s from %2$s public sources."
+msgstr ""
+
+#: src/Frontend/Hub.php:346
+msgid "No contributors meet the public evidence threshold for this tag."
+msgstr ""
+
+#: src/Frontend/Hub.php:348
+msgid "Community expertise"
+msgstr ""
+
+#: src/Frontend/Hub.php:362
+msgid "Helpful votes"
+msgstr ""
+
+#: src/Frontend/Hub.php:363
+msgid "Solution confirmations"
+msgstr ""
+
+#: src/Frontend/Hub.php:410
+msgid "This solved my problem"
+msgstr ""
+
+#: src/Frontend/Hub.php:444
+msgid "Discussion summary"
+msgstr ""
+
+#: src/Frontend/Hub.php:444
+msgid "Sources have changed; review this summary."
+msgstr ""
+
+#: src/Frontend/Hub.php:444
+msgid "Community summary; verify against the discussion."
+msgstr ""
+
+#: src/Frontend/Hub.php:451
+msgid "Related knowledge"
+msgstr ""
+
+#: src/Frontend/Hub.php:459
+msgid "Discussion preferences"
+msgstr ""
+
+#: src/Frontend/Hub.php:471
+msgid "Follow topic"
+msgstr ""
+
+#: src/Frontend/Hub.php:483
+msgid "Unfollow"
+msgstr ""
+
+#: src/Frontend/Hub.php:495
+msgid "Mute topic"
+msgstr ""
+
+#: src/Frontend/Hub.php:507
+msgid "Unmute"
+msgstr ""
+
+#: src/Frontend/Hub.php:512
+msgid "Report reason"
+msgstr ""
+
+#: src/Frontend/Hub.php:515
+msgid "Notes for moderators"
+msgstr ""
+
+#: src/Frontend/Hub.php:517
+msgid "Report discussion"
+msgstr ""
+
+#: src/Frontend/Hub.php:517
+msgid "Send report"
+msgstr ""
+
+#: src/Frontend/Hub.php:523
+msgid "Poll choices"
+msgstr ""
+
+#: src/Frontend/Hub.php:527
+msgid "Topic poll"
+msgstr ""
+
+#: src/Frontend/Hub.php:527
+msgid "Submit vote"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:41
+msgid "Sign in to view notifications"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:64
+msgid "Notification status"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:66
+msgid "All"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:67
+#: src/Frontend/NotificationCenter.php:88
+msgid "Unread"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:68
+#: src/Frontend/NotificationCenter.php:88
+msgid "Read"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:72
+msgid "Notification category"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:72
+msgid "All categories"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:76
+msgid "Filter notifications"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:77
+msgid "Mark all read"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:88
+msgid "Community activity"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:95
+msgid "Change read status"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:103
+msgid "Delete notification"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:109
+msgid "No notifications to show. Change the filters or check another page."
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:111
+msgid "Notification pages"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:123
+msgid "Newer notifications"
+msgstr ""
+
+#: src/Frontend/NotificationCenter.php:135
+msgid "Older notifications"
+msgstr ""
+
+#: src/Frontend/Pwa.php:49
+msgid "You are offline. Reconnect to read discussions or send messages."
+msgstr ""
+
+#: src/Health/Health.php:41
+msgid "Forum Intelligence processing"
+msgstr ""
+
+#: src/Health/Health.php:50
+msgid "Forum Intelligence is ready to process jobs"
+msgstr ""
+
+#: src/Health/Health.php:50
+msgid "Forum Intelligence needs attention"
+msgstr ""
+
+#: src/Health/Health.php:56
+msgid "Review schema and failed jobs in Forum Intelligence. Automatic drafts require InnoDB for native and plugin tables. Use a system cron for reliable background work."
+msgstr ""
+
+#: src/Infrastructure/AI/NullProvider.php:9
+msgid "AI is not configured. Community search remains available."
+msgstr ""
+
+#: src/Infrastructure/AI/OpenAICompatible.php:48
+#: src/Infrastructure/AI/OpenAICompatible.php:112
+msgid "The AI response could not be verified."
+msgstr ""
+
+#: src/Infrastructure/AI/OpenAICompatible.php:66
+msgid "The embedding response could not be verified."
+msgstr ""
+
+#: src/Infrastructure/AI/OpenAICompatible.php:81
+#: src/Infrastructure/AI/OpenAICompatible.php:90
+msgid "AI is not configured."
+msgstr ""
+
+#: src/Infrastructure/AI/OpenAICompatible.php:86
+msgid "AI is temporarily unavailable."
+msgstr ""
+
+#: src/Infrastructure/AI/OpenAICompatible.php:108
+msgid "AI is temporarily unavailable. Please retry later."
+msgstr ""
+
+#: src/Infrastructure/AI/TextRerankingProvider.php:15
+#: src/Infrastructure/AI/TextRerankingProvider.php:21
+#: src/Infrastructure/AI/TextRerankingProvider.php:25
+#: src/Infrastructure/AI/TextRerankingProvider.php:30
+msgid "The reranking response could not be verified."
+msgstr ""
+
+#: src/Infrastructure/Database/Store.php:96
+msgid "Please wait before trying again."
+msgstr ""
+
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:11
+msgid "Protected attachment storage is unavailable."
+msgstr ""
+
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:18
+msgid "Protected storage must be outside all served web directories."
+msgstr ""
+
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:21
+msgid "Confirm that the attachment directory is not served by your web server."
+msgstr ""
+
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:28
+msgid "The file could not be stored."
+msgstr ""
+
+#: src/Infrastructure/Storage/ProtectedLocalStorage.php:43
+msgid "The attachment could not be removed."
+msgstr ""
+
+#: src/Infrastructure/Storage/PublicMediaStorage.php:30
+msgid "The public file could not be stored."
+msgstr ""
+
+#: src/Infrastructure/Storage/PublicMediaStorage.php:43
+msgid "The file record could not be saved."
+msgstr ""
+
+#: src/Integration/BbPress/Access.php:69
+msgid "Moderation permission is required."
+msgstr ""
+
+#: src/Integration/BbPress/Access.php:75
+msgid "You cannot change this solution."
+msgstr ""
+
+#: src/Integration/BbPress/TopicFilters.php:43
+msgid "Filter topics"
+msgstr ""
+
+#: src/Privacy/Privacy.php:32
+msgid "Community interactions, follows, drafts, preferences and messages are stored on this site. Search analytics store aggregate counts rather than raw questions. Optional external AI sends redacted questions and public discussion excerpts to the configured provider. Restricted discussions are excluded. Public media URLs remain public even if a discussion later becomes restricted. Optional push stores browser subscriptions and sends generic community activity notifications through the browser vendor. Retention is controlled by the site administrator. Optional encrypted composer copies are stored on your device, separately from site drafts; the plugin does not store a passphrase or key, or send them to this site. Recovery expires after 24 hours, requires a current online permission check and sends decrypted text to this site for sanitization and possible normal draft autosave. Remove device copies in the composer or browser storage; site export, erasure and uninstall cannot remotely delete them. Composer previews do not publish or contact an AI provider."
+msgstr ""
+
+#: src/Privacy/Privacy.php:71
+msgid "Subscription credentials expired."
+msgstr ""
+
+#: src/Privacy/Privacy.php:86
+#: src/Privacy/Privacy.php:95
+msgid "Community participation"
+msgstr ""
+
+#: src/Privacy/Privacy.php:99
+msgid "Preferences"
+msgstr ""
+
+#: src/Privacy/Privacy.php:103
+msgid "Achievements enabled"
+msgstr ""
+
+#: src/Privacy/Privacy.php:167
+#: src/Privacy/Privacy.php:192
+msgid "Message removed by its author."
+msgstr ""
+
+#: src/Privacy/Privacy.php:222
+msgid "Forum content and editorial articles require their respective content retention workflows. Attachment files were removed where the original storage was available; unavailable storage requires operator cleanup. Operational audit event types and timestamps are retained with user references removed."
+msgstr ""
+
+#: src/Privacy/Uninstall.php:25
+msgid "A protected file reference is invalid. Restore or repair storage before removing plugin data."
+msgstr ""

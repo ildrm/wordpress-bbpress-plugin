@@ -1,0 +1,7 @@
+/.runtime/
+/vendor/
+/node_modules/
+/dist/
+/.phpunit.cache/
+/.phpstan-cache/
+*.log

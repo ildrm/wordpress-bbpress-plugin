@@ -1,0 +1,106 @@
+# Extension API
+
+Extensions are trusted server code. Implement the contracts under src/Contracts and use filters to replace adapters. Always return current, authorized results; adapter replacement must not widen the central access policy.
+
+| Filter/action | Arguments and purpose |
+| --- | --- |
+| fi_text_provider | TextProvider instance; grounded text adapter |
+| fi_embedding_provider | EmbeddingProvider instance |
+| fi_vector_store | VectorStore instance |
+| fi_search_engine | SearchEngine instance |
+| fi_realtime_transport | RealtimeTransport instance |
+| fi_can_read_object | allowed, native post ID, viewer ID; restrict current access |
+| fi_is_public_object | allowed, post ID; restrict external/public eligibility |
+| fi_can_accept_solution | allowed, topic ID, actor ID |
+| fi_scan_attachment | allowed, temporary file, MIME; malware/content scanner |
+| fi_trending_score | score, topic ID, age hours, replies, recent signals |
+| fi_moderation_signals | signal list, source text; advisory only |
+| fi_push_client_options | Guzzle transport options; trusted testing/transport customization |
+| fi_solution_changed | topic, reply, command, actor; committed solution event |
+| fi_signal_changed | source, actor, signal kind, value |
+| fi_notification_created | recipient, source, category, stable event key |
+| fi_moderation_action | source, command, moderator |
+| fi_booted | Store, Access, Solutions |
+
+Domain events are committed before public mutation actions fire. Subscribers must remain idempotent. Filters cannot override a failed native permission check. Attachment scans must reject with false or throw a safe domain failure; do not print paths. Keep push endpoint restrictions, redirect protections and credential isolation when adapting transport options.
+
+TextProvider returns answer and source_ids; callers enforce only sent, current and readable citations and render plain text. EmbeddingProvider returns a finite bounded numeric vector. VectorStore is a candidate service, not an authorization oracle. SearchEngine returns authorized native-source metadata/snippets. RealtimeTransport must enforce membership on every poll/event.
+
+Module flags live in fi_settings[modules]. Disabling a module removes its operation registration and frontend controls; queued jobs for disabled modules fail safely and retained data remains for later reactivation/export.
+
+| Hook | Parameters | Timing |
+| --- | --- | --- |
+| `fi_badge_awarded` | member ID, badge record ID, actor ID, unique event key | After a committed active-state transition; notifications reauthorize the current record |
+
+| `fi_poll_closed` | topic ID, actor ID (zero for automatic expiry), unique event key | After the committed first close transition; voter/follower delivery is queued separately |
+| `fi_knowledge_published` | provenance topic ID, editor ID, article/content event key | After a published article changes; draft articles do not emit this event |
+| `fi_reputation_source_reconciled` | current source author ID | After source-ledger reconciliation; achievements enqueue a fresh evidence check |
+
+VectorStore::nearest should return a source-ID-to-finite-numeric-cosine map within the requested limit. The bundled hybrid consumer caps examination at 50 entries and only admits int/float similarities in [0.5,1] after current access/source checks; numeric strings, NaN, infinity and values outside that interval do not enter semantic results. Votes for bounded candidates are loaded in one site-prefixed aggregate query. The hybrid constructor's optional Store argument preserves existing five-argument callers. The bundled search explain filter is opt-in and requires manage_options; replacement SearchEngine implementations must preserve that privilege boundary and current source authorization. Debug metadata contains numeric inputs/contributions, not query text, matched secret fields or provider internals.
+
+TextProvider::generate receives the ask service's already redacted instruction (at most 1,000 characters) and public evidence (at most twelve sources / 3,000 characters each). The source/accepted-primary pair that meets coverage of the original query is reserved within that budget. Shared Domain\AI\Evidence preparation also backs the bundled compatible adapter; its public redact method remains available through the existing adapter facade. Return a nonempty plain-text answer and a list of at most twelve positive integer source_ids. Numeric strings, keyed lists, blank or HTML-only answers and excessive IDs cause abstention. Answers are sanitized/bounded to 8,000 characters; duplicate IDs collapse. Central access/hash/current-primary checks remain mandatory after adapter work, including uncited qualifying evidence. Replacement search adapters cannot widen the twelve-result ask bound or supply fabricated coverage to bypass this gate.
+
+Answers::canPresent(result, reader) is a read-only delayed-display validator for issued generated responses. Keep the grounding metadata intact: its opaque signature binds current site/original reader, support snapshot, answer and citations. A valid signature alone is insufficient; the current public/readable sources and accepted-primary selection must still pass. It performs no provider call or metric write. Native rendering uses it and shows a generic ask-again status on invalidation. Legacy generated caches without a proof fail closed; ordinary fallback refresh is unchanged.
+
+Ranking::validVector admits indexed numeric lists with 1–4,096 finite components; existing numeric strings remain compatible and native writes normalize them to floats. Cosine scales each vector by its own largest absolute component before dot/norm arithmetic. Zero norms return zero. LocalVectorStore rejects malformed puts before SQL, rejects malformed query vectors before corpus reads and skips corrupt stored scalar/keyed/nonfinite/oversized JSON while keeping healthy candidates. Current model/hash checks remain. Indexer only reuses a public semantic cache with a valid vector; reindexing regenerates malformed current caches while preserving valid-cache reuse and restricted/no-semantic no-provider behavior. This closes numerical/shape admission, not the separate larger-vector memory/workload acceptance gate.
+
+Replacement adapter input projections: Knowledge prepares at most twelve current public/readable sources through Evidence::text (3,000 characters each), and Advisory prepares one. Indexer projects public embedding input through Evidence::text with the 12,000-character embedding bound; HybridSearch projects query input with a 500-character bound. Native lexical content, original query, content hashes and editorial fingerprints stay unchanged. Restricted sources and restricted-forum queries remain local. Evidence::text's optional limit is clamped to 1–12,000; its default remains 3,000. These central projections apply before every corresponding replacement provider call; trusted extensions still must honor native access and retention policy.
+
+Generated summaries require sanitized nonempty text, a nonempty indexed list of at most twelve positive integer source IDs and citations from the actual sent list. Duplicate IDs are validated once; summary text is capped at 20,000 characters, matching the existing editorial text bound. Invalid output raises the existing safe citation failure before storage or generation events. Advisory rejects missing/nonstring or over-20,000-character JSON and any source list other than the exact one native source before decoding; its existing finite score/recommendation/1,000-character explanation/current-source checks and human-only actions remain. Invalid outputs cannot replace the current record. No provider-specific token/context adequacy or live-provider certification is implied. Existing cached vectors follow the configured model/native hash contract; operators changing an adapter must use a distinct compatible model namespace or explicitly invalidate their vectors rather than assume a normal rebuild changes valid current caches.
+
+Provider completion authorization: Knowledge renews actor moderation permission and topic access after replacement-provider work. Advisory renews case/source/actor checks and rejects a changed case source even when the original source hash is unchanged. Advisory::view only returns data whose native integer source binding matches the current case and whose hash is well formed. Reassigned or incomplete legacy records require regeneration; a same-source content change still uses the existing stale label. These checks precede saving generation output/events; they do not authorize provider-driven native moderation actions.
+
+Portable vector capacity: LocalVectorStore scans descending source-ID keyset pages of at most fifty, counting every returned row toward the unchanged 1,000-row bound even if shape/model/hash admission rejects it. Only current-model bounded finite vectors prime native source, reply-topic parent and forum post/metadata caches. Native Indexer hashes remain authoritative; edits and password/visibility changes continue to invalidate through normal WordPress caches. Pages/decoded batches are released before the next database read; only numeric scores survive. The return cap remains one hundred and retrieval adds no provider calls or analytics. This does not certify arbitrary native post sizes, deeply nested forums, all extension-filter costs or million-source indexes.
+
+
+Schema 8 local cache maintenance compiles existing canonical JSON using stable independently scaled doubles; the optional FIV1 representation is an internal disposable cache, not part of VectorStore's public contract. Replacement adapters still receive validated numeric arrays. Local vector maintenance remains registered when an adapter is replaced, so existing queued conversion jobs do not become module-disabled failures. Neither maintenance nor retrieval invokes a replacement embedding or vector provider. Canonical JSON/model/native hash checks remain authoritative, damaged frames fall back without a write and source invalidation clears the frame. No embedding model namespace or editorial fingerprint changes are introduced by this cache format.
+
+The fi_discussion_changed action receives the positive native topic ID after an owned per-site discussion revision increment. Native hooks can emit it more than once for one user action; consumers must coalesce or deduplicate their own work and use the current blog, current permissions and current native sources. It carries no copied source text. The built-in optional automatic summary consumer uses one delayed topic job and renews current policy before transfer and result storage. The fi_solution_changed action also schedules its review under the same current policy.
+
+
+The fi_summary_ready action receives the current-site topic ID after a manual current summary edit or a successful generated summary save/audit. Opt-in article conversion listens locally and schedules only topic-ID work. The optional internal callable on Knowledge::command()/draft conversion is a trusted application guard for native insertion callbacks; HTTP input never supplies it. Default existing four-argument commands stay compatible. Custom integrations must retain native source/owner/editing checks, unpublished article status and human publication.
+
+
+Source comparison uses current-site Store table resolution and current native article/source capabilities, including after native callbacks. Native WordPress revisions remain authoritative; comparison has no copied-history endpoint and never substitutes a nearby revision when an exact digest pair is missing. Adapters must preserve strict source provenance and cannot use revision pointers to bypass current source permissions. Automatic draft conversion requires InnoDB for participating native and plugin tables; the metadata safeguard reads information_schema for the current database and never modifies an operator’s existing storage engine.
+
+
+Knowledge commands accept recommend and unrecommend for current native topics under current moderator and module policy. Recommendation is local human review and requires a solved discussion with a current readable accepted answer; it does not call a replacement provider or emit summary-ready work. The reason uses the shared text argument but is limited to 2,000 characters. Knowledge::recommendations(user, before) returns a bounded private current-site queue with a descending ID cursor. Callers must renew native permissions when rendering links and must escape human note text. Stored malformed or unavailable bindings fail closed. Recommendation archive changes follow successful native draft conversion and retain original note authorship for privacy erasure; they do not authorize publication.
+
+
+Native knowledge targets implement Contracts\\KnowledgeTarget: postType(), label() and createDraft(array). Use fi_knowledge_targets to add a stable lowercase adapter identifier (up to 64 characters). The default fi_knowledge adapter cannot be replaced, and duplicate native types are not admitted. NativeKnowledgeTarget supplies ordinary wp_insert_post conversion for a compatible private editorial type. The supplied data includes a transient creation marker in meta_input; an adapter must preserve it, insert a new native draft and return its positive native ID. Central conversion validates current target/source/actor/module/provenance, native type/state/owner/edit capabilities and that the ID is new. It owns rollback, created/source/policy cache refresh, recommendation archive and audit. No extension may publish or perform provider processing during this local draft contract.
+
+Compatible types have mapped native capabilities and title/editor/revisions/author support; show_ui is enabled and public/publicly_queryable/show_in_rest/has_archive are false with exclude_from_search true. Custom create_posts and edit_posts capabilities remain authoritative. Public or REST-exposed types require a separately reviewed integration covering their raw response surfaces and are rejected by this native adapter. Removing an adapter fails closed for its existing bound articles without erasing human storage. An adapter identifier must keep its meaning across deployments; changing the selected target affects only new drafts. Default legacy built-in provenance remains compatible.
+
+## Stored summary admission and concurrent writes
+
+Do not seed incomplete or scalar summary records through generic saveRecord and expect them to authorize generation. Use the native knowledge edit/unlock commands to create a valid source-bound editorial snapshot, or preserve all canonical kind/topic/source/fingerprint/typed-policy invariants. Unknown or unavailable data fails safely and remains stored. Existing provider-output citation rules still apply independently of stored-record admission.
+
+Knowledge generation compares the original persisted record identity/version/payload at completion under the current-site canonical row lock. A provider or native access callback that creates/replaces/edits/unlocks the record cancels the older result. Manual edits also renew native moderator/source rights and reject callbacks that replace the selected record. Audited manual/generated writes are atomic, and fi_summary_ready fires only after successful persistence and audit. A provider must not treat a valid citation list as permission to replace newer human state; callers should reopen the review after a controlled conflict.
+
+## Stable reaction choices
+
+Engagement::REACTIONS retains four stable identifiers. normalizeReactions() admits a bounded typed selection in catalog order; enabledReactions() resolves current-blog configuration, and reactionLabels()/removalLabels() provide shared translatable frontend/admin text. Display names never become persisted identifiers. Disabling preserves history and permits an existing owner's zero withdrawal under current native permissions. Helpful reactions are independent from scored helpful votes. Public controls show known enabled counts with human labels; disabled counts and unknown labels are withheld.
+
+## Atomic native callbacks
+
+Use Store::transaction() for plugin database mutations. Store instances sharing the same native wpdb object coordinate one outer transaction and nested savepoints, avoiding an implicit early commit when a hook uses another service instance. Caught nested exceptions discard inner writes; uncaught outer failures discard all nested work. Do not issue independent START/COMMIT/ROLLBACK or schema-changing SQL inside these callbacks. WordPress caches and external effects are separate from database rollback: keep external effects after committed state and refresh caches for native objects/options changed by callbacks.
+
+Vote admission renews current module/downvote/self policy, native source/parent states and actor context after permission and row-lock callbacks. Rollback refreshes the matching global current-user object as well as native caches. Confirmation eligibility comes from the current locked solved row with bounded native integer reply IDs. Presentation author filters cannot choose credit ownership. Source changes return a controlled conflict; reopen the current discussion before retrying.
+
+## Duplicate feedback semantics
+
+Duplicates::suggest() remains local and returns may_continue/external_processing plus an optional short-lived offer. Duplicates::feedback(offer, outcome, user, objectId) permits viewed, opened or dismissed; opened requires one of the issued native topic IDs, while other outcomes use objectId zero. The registered duplicate_feedback operation uses the ordinary authenticated REST action boundary. A recorded false response is a successful idempotent replay. Controlled refusal and unavailable feedback must leave the native composer text and submit path intact.
+
+Relevance percentages describe the local weighting formula and are not correctness probabilities. Aggregate counters describe per-offer acknowledged outcomes, which may overlap; do not present them as a causal number of prevented topics or unique members. No provider, notification, reputation or personal activity record is created by feedback. Source permission revocation or movement invalidates the whole offer instead of exposing historical evidence. Signed offers bind to the current site and current account, including across retained service instances.
+
+## Independent moderation and reranking providers
+
+`fi_moderation_provider` receives a `ModerationProvider`; its `assess(evidence)` returns an advisory answer/source_ids envelope validated by the moderation domain. A backend does not need to implement `TextProvider`. The explicit `TextModerationProvider` bridge supports existing text adapters; the legacy Advisory constructor accepts a text adapter through that bridge. No provider response executes a native moderation action.
+
+`fi_reranking_provider` receives a `RerankingProvider`; `rerank(query, evidence)` returns an ID-to-finite-score map in [0,1]. Every supplied ID must be scored exactly once. The bounded search decorator requires current general AI and reranking consent, public sources, unchanged hashes/presentation proofs, valid scores and an unchanged authorized candidate set after provider work. It retains current results on any failure. It skips recency sorts, later pages, sets outside two-to-twelve results and any restricted source. `TextRerankingProvider` is an explicit text bridge; malicious/duplicate/unknown IDs and malformed citations are rejected.
+
+`fi_summary_provider` independently receives a `TextProvider` for knowledge summaries. Existing `fi_text_provider` and `fi_embedding_provider` remain available. Each contract is validated independently, with safe null fallbacks and a numeric contract-failure metric. `NullProvider` implements all four provider contracts without external transport. Trusted replacement adapters must preserve central access, input bounds and consent, and must not log raw content.
+
+`OpenAICompatible(Store, feature)` preserves one-argument callers. Supported feature model selectors are text, summary, moderation and reranking; blank feature models fall back to the configured text model. The bundled transport renews typed general consent immediately before HTTP and retains HTTPS/redirect/response-size controls. Feature flags, bounded timeout/completion/failure-pause settings and daily request accounting are site-specific. The bundled adapter honors `ai_logging` values `off`, `errors` and `usage` (default); unknown/malformed values suppress its metrics. Logging is checked against current settings after transport. Every mode preserves quota claims and security audits. Replacement providers own their equivalent logging policy and must never log raw content.
+
+The ask result includes `feedback_token` when its current owner/site grounding is verified. The token is an ephemeral receipt rather than an answer payload. Submit it with the native topic ID through `ai_feedback`; do not manufacture receipts or expose another reader's token. Moderator review uses `ai_feedback_review` with report ID, state and exact native version (including zero).

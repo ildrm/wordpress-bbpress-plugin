@@ -1,0 +1,12 @@
+parameters:
+    level: 5
+    paths:
+        - src
+        - forum-intelligence-for-bbpress.php
+        - uninstall.php
+    scanDirectories:
+        - .runtime/bbpress
+    scanFiles:
+        - .runtime/wp-cli-class.php
+        - .runtime/bp-source/buddypress/bp-core/bp-core-functions.php
+    tmpDir: .phpstan-cache

@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+const headers={'User-Agent':'ForumIntelligence-local-build-verification','Accept':'application/vnd.github+json'};
+const response=await fetch('https://api.github.com/repos/humbug/php-scoper/releases/tags/0.18.19',{headers});
+if(!response.ok)throw new Error('Official release metadata unavailable: '+response.status);
+const release=await response.json();
+const asset=release.assets.find(asset=>asset.name==='php-scoper.phar');
+if(!asset || !/^sha256:[a-f0-9]{64}$/.test(asset.digest||''))throw new Error('Release lacks an independently recorded asset digest.');
+const download=await fetch(asset.browser_download_url);
+if(!download.ok)throw new Error('Official PHAR download failed');
+const bytes=Buffer.from(await download.arrayBuffer());
+const actual=createHash('sha256').update(bytes).digest('hex');
+if(asset.digest!=='sha256:'+actual || actual!=='170fb84bd3390defb30f99f7dc39c9a89d10c29973accc26f31c00abc5b25933')throw new Error('Official release digest mismatch');
+fs.writeFileSync('.runtime/php-scoper.phar',bytes);
+fs.writeFileSync('.runtime/php-scoper-release.json',JSON.stringify({tag:release.tag_name,url:asset.browser_download_url,sha256:actual},null,2));
+console.log('Verified official PHP-Scoper '+release.tag_name+' asset SHA-256 '+actual);
